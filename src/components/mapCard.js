@@ -11,7 +11,7 @@ export default function MapCard(){
         <Card sx={{ minWidth: 300, height: 800 }} elevation={12} >
             <CardMedia
                 component="img"
-                height="600"
+                height="800"
                 src="/map_img.png"
                 alt="Static map"
             />
