@@ -1,4 +1,7 @@
-
+* 2020.09.16 mapbox-site-locator
+  - This will have the initial implementation of the site locations as markers.
+  - With a side bar to select the store and markers on the map.
+  - The previous build is having issues. 
 
 * 2020.09.16 mapbox-integration
   - Integrationg mapbox api's into app.
