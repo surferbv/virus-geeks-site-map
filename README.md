@@ -1,6 +1,17 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## External Libraries 
+
+
+## mapbox-gl
+https://yarnpkg.com/package/mapbox-gl#readme
+yarn add mapbox-gl
+
+## material-ui
+https://mui.com/getting-started/installation/
+yarn add @mui/material @emotion/react @emotion/styled
+yarn add @mui/icons-material
+
 
 ## Available Scripts
 
