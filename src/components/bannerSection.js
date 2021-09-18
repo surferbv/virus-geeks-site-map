@@ -12,7 +12,6 @@ export default function BannerSection(){
                 justifyContent="flex-start"
                 alignItems="center"
                 spacing={1}
-             
             >
                 <Grid item>
                     <img src="/vg_logo.png" alt="virus geeks" width="80" height="80"/>
