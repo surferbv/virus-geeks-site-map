@@ -59,37 +59,38 @@ export default function MapBox() {
     });
 
   });
-
-
-  // useEffect(()=>{
-  //   if (!map.current) return;
-  //   map.current.addLayer({
-  //     id: 'locations',
-  //     type: 'circle',
-  //     /* Add a GeoJSON source containing place coordinates and information. */
-  //     source: {
-  //       type: 'geojson',
-  //       data: stores
-  //     }
-  //   });
-  // });
-
   
-
-  return (
-    <div>
-      {/* For deubug of lng and lat */}
-      {/* <div className="locsidebar">
-        Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-      </div> */}
-
-      {/* <div class="sidebar">
-        <div class="heading">
-        </div>
-        <div id="listings" class="listings"></div>
-      </div> */}
-
-      <div ref={mapContainer} className="map-container" />
-    </div>
-  );
+  // displaying fetch error to the ui
+  if (error) {
+    return( 
+      <div>
+        <Alert severity="error">Error: {error.message}</Alert>
+      </div>
+    );
+  } else if (!isLoaded) {
+    return (
+      <div>      
+        <Alert severity="info">Loading...</Alert>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {/* For deubug of lng and lat */}
+        {/* <div className="locsidebar">
+          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+        </div> */}
+  
+        {/* For site listing side bar */}
+        {/* <div class="sidebar">
+          <div class="heading">
+          </div>
+          <div id="listings" class="listings"></div>
+        </div> */}
+  
+        {/* For map map container  */}
+        <div ref={mapContainer} className="map-container" />
+      </div>
+    );
+  }
 }
