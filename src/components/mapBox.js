@@ -31,6 +31,7 @@ export default function MapBox() {
         console.log("SUCCESS!");
         console.log(result);
         
+        // init map
         map.current = new mapboxgl.Map({
           container: mapContainer.current,
           style: "mapbox://styles/mapbox/streets-v11",
@@ -38,6 +39,30 @@ export default function MapBox() {
           zoom: zoom,
         }); 
 
+        // will fire once the map has loaded
+        map.current.on('load', () =>{
+          
+          // add data
+          map.current.addSource('earthquakes', {
+            type: 'geojson',
+            data: result
+          });
+
+          // add layer
+          map.current.addLayer({
+            'id': 'earthquakes-layer',
+            'type': 'circle',
+            'source': 'earthquakes',
+            'paint': {
+              'circle-radius': 8,
+              'circle-stroke-width': 2,
+              'circle-color': 'red',
+              'circle-stroke-color': 'white'
+            }
+          });
+
+        });
+        
       },
       (error) =>{
         setIsLoaded(true);
@@ -47,7 +72,7 @@ export default function MapBox() {
       }
     )
     
-  }, [apiUrl]); // sine we are passing an empty array this will only run once eslint will give warnings
+  }, [apiUrl]); // this will allow to update automatically for any state changes
 
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
