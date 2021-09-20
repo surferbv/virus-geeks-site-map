@@ -27,9 +27,7 @@ export default function MapBox() {
     .then(
       (result) => {
         setIsLoaded(true);
-        setItems(result);
-        console.log("SUCCESS!");
-        console.log(result);
+        setItems(result); // TODO: remove please not needed. 
         
         // init map
         map.current = new mapboxgl.Map({
@@ -62,7 +60,7 @@ export default function MapBox() {
           });
 
         });
-        
+
       },
       (error) =>{
         setIsLoaded(true);
