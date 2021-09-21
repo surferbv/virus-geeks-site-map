@@ -29,7 +29,13 @@ export default function MapBox() {
       (result) => {
         setIsLoaded(true);
         setItems(result); // TODO: remove please not needed. 
-        
+        const sites = result;
+
+        // add unique ids to sites
+        sites.features.forEach((site, i)=>{
+          site.properties.id = i;
+        });
+
         // init map
         map.current = new mapboxgl.Map({
           container: mapContainer.current,
