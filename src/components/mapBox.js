@@ -50,7 +50,7 @@ export default function MapBox() {
           // add data
           map.current.addSource('earthquakes', {
             type: 'geojson',
-            data: result
+            data: sites
           });
 
           // add layer
