@@ -66,9 +66,7 @@ export default function MapBox() {
             }
           });
 
-          // buildLocationList( result );
-
-
+          buildLocationList( result );
 
         });
 
@@ -115,7 +113,7 @@ export default function MapBox() {
       link.innerHTML = `${properties.address}`;
 
       // add details to each listing
-      const details = listing.appendChild(document.createElement('<div>'));
+      const details = listing.appendChild(document.createElement('div'));
       details.innerHTML = `${properties.city}`;
       if(properties.phone){
         details.innerHTML += `. ${properties.phoneFormatted}`;
