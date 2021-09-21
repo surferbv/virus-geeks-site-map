@@ -66,6 +66,10 @@ export default function MapBox() {
             }
           });
 
+          // buildLocationList( result );
+
+
+
         });
 
       },
