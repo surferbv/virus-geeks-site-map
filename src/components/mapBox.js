@@ -71,7 +71,7 @@ export default function MapBox() {
       }
     )
     
-  }, [apiUrl]); // this will allow to update automatically for any state changes
+  }, [siteApiUrl]); // this will allow to update automatically for any state changes
 
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
