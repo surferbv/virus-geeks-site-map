@@ -4,7 +4,7 @@ import MapCard from './mapCard';
 
 export default function MapSection(){
     return(
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" sx={{mb: 3}}>
         <MapCard/>
         </Container>
     )
