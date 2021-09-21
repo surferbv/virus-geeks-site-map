@@ -23,7 +23,7 @@ export default function MapBox() {
 
   useEffect(() => {
 
-    fetch(apiUrl)
+    fetch(siteApiUrl)
     .then(res => res.json())
     .then(
       (result) => {
