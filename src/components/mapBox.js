@@ -18,7 +18,8 @@ export default function MapBox() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
-  const [apiUrl, setApiUrl] = useState("https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"); // now anytime the data changes it updates the view automaticlaly
+  const [earthquakeApiUrl, setEarthquakeApiUrl] = useState("https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"); // now anytime the data changes it updates the view automaticlaly
+  const [siteApiUrl, setSiteApiUrl] = useState("https://temp-tank.s3.us-west-1.amazonaws.com/sitedata.geojson");
 
   useEffect(() => {
 
