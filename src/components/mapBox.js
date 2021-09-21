@@ -17,8 +17,6 @@ export default function MapBox() {
   // used by fetch
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
-  const [earthquakeApiUrl, setEarthquakeApiUrl] = useState("https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"); // now anytime the data changes it updates the view automaticlaly
   const [siteApiUrl, setSiteApiUrl] = useState("https://temp-tank.s3.us-west-1.amazonaws.com/sitedata.geojson");
 
   useEffect(() => {
@@ -28,7 +26,6 @@ export default function MapBox() {
     .then(
       (result) => {
         setIsLoaded(true);
-        setItems(result); // TODO: remove please not needed. 
         const sites = result;
 
         // add unique ids to sites
@@ -48,16 +45,16 @@ export default function MapBox() {
         map.current.on('load', () =>{
           
           // add data
-          map.current.addSource('earthquakes', {
+          map.current.addSource('sites', {
             type: 'geojson',
             data: sites
           });
 
           // add layer
           map.current.addLayer({
-            'id': 'earthquakes-layer',
+            'id': 'sites-layer',
             'type': 'circle',
-            'source': 'earthquakes',
+            'source': 'sites',
             'paint': {
               'circle-radius': 8,
               'circle-stroke-width': 2,
@@ -93,7 +90,7 @@ export default function MapBox() {
   });
   
   function buildLocationList( {features} ){ // placeing a var in {} makes it an object
-    console.log(features[0]);
+    
     for ( const { properties } of features ){
       
       // new listing section for side bar
