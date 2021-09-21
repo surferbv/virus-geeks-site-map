@@ -116,11 +116,11 @@ export default function MapBox() {
         </div> */}
   
         {/* For site listing side bar */}
-        {/* <div class="sidebar">
-          <div class="heading">
+        <div className="sidebar">
+          <div className="heading">
           </div>
-          <div id="listings" class="listings"></div>
-        </div> */}
+          <div id="listings" className="listings"></div>
+        </div>
   
         {/* For map map container  */}
         <div ref={mapContainer} className="map-container" />
