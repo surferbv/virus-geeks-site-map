@@ -108,9 +108,13 @@ export default function MapBox() {
       link.innerHTML = `${properties.address}`;
 
       // adding flyto event
-      link.addEventListener('click', (e) =>{
-        console.log(features);
-        //  flytToSite(properties)
+      link.addEventListener('click', function(){
+        for (const feature of features) {
+          if (link.id === `link-${feature.properties.id}`) {
+            flyToSite(feature);
+            // createPopUp(feature);
+          }
+        }
       });
 
       // add details to each listing
@@ -127,12 +131,12 @@ export default function MapBox() {
   };
   
 
-  function flytToSite(currentFeature){
-    console.log(currentFeature);
-    // map.current.flytTo({
-    //   center: currentFeature.geometry.coordinates,
-    //   zoom: 15
-    // });
+  function flyToSite(currentFeature){
+    // console.log(map.current);
+    map.current.flyTo({
+      center: currentFeature.geometry.coordinates,
+      zoom: 15
+    });
   };
 
   // displaying fetch error to the ui
