@@ -62,9 +62,7 @@ export default function MapBox() {
               'circle-stroke-color': 'white'
             }
           });
-
-          buildLocationList( result );
-
+          buildLocationList(result );
         });
 
       },
@@ -92,7 +90,7 @@ export default function MapBox() {
   function buildLocationList( {features} ){ // placeing a var in {} makes it an object
     
     for ( const { properties } of features ){
-      
+
       // new listing section for side bar
       const listings = document.getElementById('listings'); 
       const listing = listings.appendChild(document.createElement('div'));
@@ -109,6 +107,12 @@ export default function MapBox() {
       link.id = `link-${properties.id}`;
       link.innerHTML = `${properties.address}`;
 
+      // adding flyto event
+      link.addEventListener('click', (e) =>{
+        console.log(features);
+        //  flytToSite(properties)
+      });
+
       // add details to each listing
       const details = listing.appendChild(document.createElement('div'));
       details.innerHTML = `${properties.city}`;
@@ -120,6 +124,15 @@ export default function MapBox() {
         details.innerHTML += `<div><string> ${roundedDistance} </div></string>`;
       }
     }
+  };
+  
+
+  function flytToSite(currentFeature){
+    console.log(currentFeature);
+    // map.current.flytTo({
+    //   center: currentFeature.geometry.coordinates,
+    //   zoom: 15
+    // });
   };
 
   // displaying fetch error to the ui
