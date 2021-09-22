@@ -107,14 +107,21 @@ export default function MapBox() {
       link.id = `link-${properties.id}`;
       link.innerHTML = `${properties.address}`;
 
-      // adding flyto event
+      // adding flyto and popup events
       link.addEventListener('click', function(){
-        for (const feature of features) {
+        for (const feature of features) { // this might be improved by not iterating over n features
           if (link.id === `link-${feature.properties.id}`) {
             flyToSite(feature);
-            // createPopUp(feature);
+            createPopUp(feature);
           }
         }
+
+        // setting active items css on sidebar
+        const activeItem = document.getElementsByClassName('active');
+        if(activeItem[0]){
+          activeItem[0].classList.remove('active');
+        }
+        link.parentNode.classList.add('active');
       });
 
       // add details to each listing
