@@ -19,6 +19,7 @@ export default function MapBox() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [siteApiUrl, setSiteApiUrl] = useState("https://temp-tank.s3.us-west-1.amazonaws.com/sitedata.geojson");
 
+  // to looad and setup the map
   useEffect(() => {
 
     fetch(siteApiUrl)
@@ -76,6 +77,7 @@ export default function MapBox() {
     
   }, [siteApiUrl]); // this will allow to update automatically for any state changes
 
+  // for troubleshooting and showing coordinates sidebar
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
     
@@ -87,6 +89,7 @@ export default function MapBox() {
 
   });
   
+  // build location list, create items, links, popups, and add event listeners
   function buildLocationList( {features} ){ // placeing a var in {} makes it an object
     
     for ( const { properties } of features ){
