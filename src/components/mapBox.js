@@ -52,18 +52,20 @@ export default function MapBox() {
           });
 
           // add layer
-          map.current.addLayer({
-            'id': 'sites-layer',
-            'type': 'circle',
-            'source': 'sites',
-            'paint': {
-              'circle-radius': 8,
-              'circle-stroke-width': 2,
-              'circle-color': 'red',
-              'circle-stroke-color': 'white'
-            }
-          });
-          buildLocationList(result );
+          // map.current.addLayer({
+          //   'id': 'sites-layer',
+          //   'type': 'circle',
+          //   'source': 'sites',
+          //   'paint': {
+          //     'circle-radius': 8,
+          //     'circle-stroke-width': 2,
+          //     'circle-color': 'red',
+          //     'circle-stroke-color': 'white'
+          //   }
+          // });
+
+          buildLocationList(sites);
+          addMarkers(sites);
         });
 
       },
