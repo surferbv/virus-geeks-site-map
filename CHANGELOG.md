@@ -1,3 +1,6 @@
+* 2021.09.23 sort-search-sites-by-distance
+  - Search and sorts the sites by distance
+
 * 2021.09.22 mapbox-markers
   - Add markers to mapbox map.
   - Some additional changes to fly to and popup need to be changed.
