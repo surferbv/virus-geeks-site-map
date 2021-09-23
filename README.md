@@ -15,6 +15,9 @@ https://mui.com/getting-started/installation/
 https://turfjs.org/getting-started/
 ### `yarn add @turf/turf`
 
+### mapbox-gl-geocoder
+### `yarn add @mapbox/mapbox-gl-geocoder`
+
 ## Getting Started
 In the project directory, run the following:
 
