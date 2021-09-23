@@ -29,7 +29,7 @@ export default function MapBox() {
         setIsLoaded(true);
         const sites = result;
 
-        // add unique ids to sites
+        // add unique id to each site
         sites.features.forEach((site, i)=>{
           site.properties.id = i;
         });
@@ -52,18 +52,20 @@ export default function MapBox() {
           });
 
           // add layer
-          map.current.addLayer({
-            'id': 'sites-layer',
-            'type': 'circle',
-            'source': 'sites',
-            'paint': {
-              'circle-radius': 8,
-              'circle-stroke-width': 2,
-              'circle-color': 'red',
-              'circle-stroke-color': 'white'
-            }
-          });
-          buildLocationList(result );
+          // map.current.addLayer({
+          //   'id': 'sites-layer',
+          //   'type': 'circle',
+          //   'source': 'sites',
+          //   'paint': {
+          //     'circle-radius': 8,
+          //     'circle-stroke-width': 2,
+          //     'circle-color': 'red',
+          //     'circle-stroke-color': 'white'
+          //   }
+          // });
+
+          buildLocationList(sites);
+          addMarkers(sites);
         });
 
       },
@@ -110,7 +112,7 @@ export default function MapBox() {
       link.id = `link-${properties.id}`;
       link.innerHTML = `${properties.address}`;
 
-      // adding flyto and popup events
+      // adding flyto and popup events to links
       link.addEventListener('click', function(){
         for (const feature of features) { // this might be improved by not iterating over n features
           if (link.id === `link-${feature.properties.id}`) {
@@ -140,6 +142,7 @@ export default function MapBox() {
     }
   };
   
+
   // event action to fly to location of site on map
   function flyToSite(currentFeature){
     map.current.flyTo({
@@ -159,6 +162,35 @@ export default function MapBox() {
     .setHTML(`<h3>Virus Geeks</h3><h4>${currentFeature.properties.address}</h4>`)
     .addTo(map.current);
     console.log(popup);
+  };
+
+  // adds markers
+  function addMarkers( {features} ){
+
+    for(const marker of features){
+      const el = document.createElement('div');
+      el.id = `marker-${marker.properties.id}`;
+      el.className = 'marker';
+
+      new mapboxgl.Marker(el, { offset:[0,-6] })
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map.current);
+
+      // adding flyto and popup events to links
+      el.addEventListener('click', (e) =>{
+        flyToSite(marker);
+        createPopUp(marker);
+
+        const activeItem = document.getElementsByClassName('active');
+        e.stopPropagation();
+        if(activeItem[0]){
+          activeItem[0].classList.remove('active');
+        }
+        const listing = document.getElementById(`listing-${marker.properties.id}`);
+        listing.classList.add('active');
+      });
+
+    }
   };
 
 
