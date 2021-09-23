@@ -177,6 +177,18 @@ export default function MapBox() {
         .addTo(map.current);
 
       // adding flyto and popup events to links
+      el.addEventListener('click', (e) =>{
+        flyToSite(marker);
+        createPopUp(marker);
+
+        const activeItem = document.getElementsByClassName('active');
+        e.stopPropagation();
+        if(activeItem[0]){
+          activeItem[0].classList.remove('active');
+        }
+        const listing = document.getElementById(`listing-${marker.properties.id}`);
+        listing.classList.add('active');
+      });
 
     }
   };
