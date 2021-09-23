@@ -19,6 +19,7 @@ export default function MapBox() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [siteApiUrl, setSiteApiUrl] = useState("https://temp-tank.s3.us-west-1.amazonaws.com/sitedata.geojson");
 
+  // to looad and setup the map
   useEffect(() => {
 
     fetch(siteApiUrl)
@@ -62,9 +63,7 @@ export default function MapBox() {
               'circle-stroke-color': 'white'
             }
           });
-
-          buildLocationList( result );
-
+          buildLocationList(result );
         });
 
       },
@@ -78,6 +77,7 @@ export default function MapBox() {
     
   }, [siteApiUrl]); // this will allow to update automatically for any state changes
 
+  // for troubleshooting and showing coordinates sidebar
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
     
@@ -89,10 +89,11 @@ export default function MapBox() {
 
   });
   
+  // build location list, create items, links, popups, and add event listeners
   function buildLocationList( {features} ){ // placeing a var in {} makes it an object
     
     for ( const { properties } of features ){
-      
+
       // new listing section for side bar
       const listings = document.getElementById('listings'); 
       const listing = listings.appendChild(document.createElement('div'));
@@ -109,6 +110,23 @@ export default function MapBox() {
       link.id = `link-${properties.id}`;
       link.innerHTML = `${properties.address}`;
 
+      // adding flyto and popup events
+      link.addEventListener('click', function(){
+        for (const feature of features) { // this might be improved by not iterating over n features
+          if (link.id === `link-${feature.properties.id}`) {
+            flyToSite(feature);
+            createPopUp(feature);
+          }
+        }
+
+        // setting active items css on sidebar
+        const activeItem = document.getElementsByClassName('active');
+        if(activeItem[0]){
+          activeItem[0].classList.remove('active');
+        }
+        link.parentNode.classList.add('active');
+      });
+
       // add details to each listing
       const details = listing.appendChild(document.createElement('div'));
       details.innerHTML = `${properties.city}`;
@@ -121,6 +139,28 @@ export default function MapBox() {
       }
     }
   };
+  
+  // event action to fly to location of site on map
+  function flyToSite(currentFeature){
+    map.current.flyTo({
+      center: currentFeature.geometry.coordinates,
+      zoom: 15
+    });
+  };
+
+  // adds a popup given a current feature
+  function createPopUp(currentFeature){
+    const popUps = document.getElementsByClassName('mapboxgl-popup');
+    
+    if(popUps[0]) popUps[0].remove();
+    
+    const popup = new mapboxgl.Popup({ closeOnClick: false })
+    .setLngLat(currentFeature.geometry.coordinates)
+    .setHTML(`<h3>Virus Geeks</h3><h4>${currentFeature.properties.address}</h4>`)
+    .addTo(map.current);
+    console.log(popup);
+  };
+
 
   // displaying fetch error to the ui
   if (error) {

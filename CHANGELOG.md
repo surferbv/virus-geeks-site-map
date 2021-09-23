@@ -1,3 +1,7 @@
+* 2020.09.21 map-interactivity
+  - Creat popups when a map site items is selected from the list or from the map.
+  - If a site item is selected from the list the map will fly to the site item. 
+
 * 2020.09.16 mapbox-site-locator
   - This will have the initial implementation of the site locations as markers.
   - With a side bar to select the store and markers on the map.
