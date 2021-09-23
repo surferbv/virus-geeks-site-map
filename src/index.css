@@ -29,13 +29,15 @@ code {
   border-radius: 4px;
 }
 .sidebar {
-  background-color: rgba(35, 55, 75, 0.2);
+  background-color: rgba(12, 130, 114, .9);
   position: absolute;
-  width: 25%;
+  width: 250px;
   height: 800px;
   z-index: 1;
   overflow: hidden;
-  border-right: 2px solid rgba(0, 0, 0, 0.25);
+  border-right: 8px solid rgba(0, 0, 0, 0.25);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 /* listing styles on side bar of map */
@@ -55,14 +57,14 @@ code {
 
 .listings .item .title {
   display: block;
-  color: #00853e;
+  color: #17FDFD;
   font-weight: 700;
 }
 
 .listings .item .title small { font-weight: 400; }
 
 .listings .item.active .title,
-.listings .item .title:hover { color: #8cc63f; }
+.listings .item .title:hover { color: #12C0B8; } 
 
 .listings .item.active {
   background-color: #f8f8f8;
