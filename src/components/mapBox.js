@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import Alert from "@mui/material/Alert";
-
 import * as turf from '@turf/turf';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 
 mapboxgl.accessToken =
@@ -55,7 +56,6 @@ export default function MapBox() {
 
           // geocoder
           const geocoder = new MapboxGeocoder({});
-          
 
           buildLocationList(sites);
           addMarkers(sites);
@@ -153,7 +153,6 @@ export default function MapBox() {
     .setLngLat(currentFeature.geometry.coordinates)
     .setHTML(`<h3>Virus Geeks</h3><h4>${currentFeature.properties.address}</h4>`)
     .addTo(map.current);
-    console.log(popup);
   };
 
   // adds markers
