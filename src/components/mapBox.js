@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import Alert from "@mui/material/Alert";
+
 import * as turf from '@turf/turf';
 
 
@@ -52,18 +53,9 @@ export default function MapBox() {
             data: sites
           });
 
-          // add layer
-          // map.current.addLayer({
-          //   'id': 'sites-layer',
-          //   'type': 'circle',
-          //   'source': 'sites',
-          //   'paint': {
-          //     'circle-radius': 8,
-          //     'circle-stroke-width': 2,
-          //     'circle-color': 'red',
-          //     'circle-stroke-color': 'white'
-          //   }
-          // });
+          // geocoder
+          const geocoder = new MapboxGeocoder({});
+          
 
           buildLocationList(sites);
           addMarkers(sites);
@@ -80,7 +72,7 @@ export default function MapBox() {
     
   }, [siteApiUrl]); // this will allow to update automatically for any state changes
 
-  // for troubleshooting and showing coordinates sidebar
+  // for troubleshooting and showing coordinates sidebar TODO: NOT BEING USED REMOVE LATER.
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
     
@@ -142,7 +134,6 @@ export default function MapBox() {
       }
     }
   };
-  
 
   // event action to fly to location of site on map
   function flyToSite(currentFeature){
@@ -193,7 +184,6 @@ export default function MapBox() {
 
     }
   };
-
 
   // displaying fetch error to the ui
   if (error) {
