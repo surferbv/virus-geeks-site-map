@@ -94,3 +94,8 @@ code {
   width: 56px;
   background-image: url(/src/assets/vg_marker.png);
 }
+
+/* popup */
+.mapboxgl-popup {
+  padding-bottom: 40px;
+}
