@@ -54,8 +54,15 @@ export default function MapBox() {
             data: sites
           });
 
-          // geocoder
-          const geocoder = new MapboxGeocoder({});
+          // init new geocoder
+          const geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl, // set instance of mapboxgl
+            marker: true, // geocoder default marker style TODO: REMOVE LATER?
+            // bbox: [-77.210763, 38.803367, -76.853675, 39.052643] // set defaut bounding box in coords TODO: REMOVE LATER?
+          });
+
+          map.current.addControl(geocoder, 'top-left');
 
           buildLocationList(sites);
           addMarkers(sites);
