@@ -142,6 +142,7 @@ export default function MapBox() {
     }
   };
   
+
   // event action to fly to location of site on map
   function flyToSite(currentFeature){
     map.current.flyTo({
@@ -161,6 +162,23 @@ export default function MapBox() {
     .setHTML(`<h3>Virus Geeks</h3><h4>${currentFeature.properties.address}</h4>`)
     .addTo(map.current);
     console.log(popup);
+  };
+
+  // adds markers
+  function addMarkers( {features} ){
+
+    for(const marker of features){
+      const el = document.createElement('div');
+      el.id = `marker-${marker.properties.id}`;
+      el.className = 'marker';
+
+      new mapboxgl.Marker(el, { offset:[0,-6] })
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map.current);
+
+      // adding flyto and popup events to links
+
+    }
   };
 
 
