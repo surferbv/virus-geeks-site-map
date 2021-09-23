@@ -29,7 +29,7 @@ export default function MapBox() {
         setIsLoaded(true);
         const sites = result;
 
-        // add unique ids to sites
+        // add unique id to each site
         sites.features.forEach((site, i)=>{
           site.properties.id = i;
         });
