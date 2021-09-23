@@ -1,6 +1,7 @@
 * 2021.09.22 mapbox-markers
   - Add markers to mapbox map.
   - Some additional changes to fly to and popup need to be changed.
+  - Added event listeners to the markers. 
 
 * 2021.09.21 map-interactivity
   - Creat popups when a map site items is selected from the list or from the map.
