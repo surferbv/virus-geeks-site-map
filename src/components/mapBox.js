@@ -112,7 +112,7 @@ export default function MapBox() {
       link.id = `link-${properties.id}`;
       link.innerHTML = `${properties.address}`;
 
-      // adding flyto and popup events
+      // adding flyto and popup events to links
       link.addEventListener('click', function(){
         for (const feature of features) { // this might be improved by not iterating over n features
           if (link.id === `link-${feature.properties.id}`) {
