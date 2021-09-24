@@ -28,9 +28,9 @@ export default function MapBox() {
     fetch(siteApiUrl)
     .then(res => res.json())
     .then(
-      (result) => {
+      (response) => {
         setIsLoaded(true);
-        const sites = result;
+        const sites = response;
 
         // add unique id to each site
         sites.features.forEach((site, i)=>{
