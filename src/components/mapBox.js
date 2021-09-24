@@ -239,6 +239,28 @@ export default function MapBox() {
     }
   };
 
+  // geocoder bounding box results
+  function getBbox(sortedSites, siteIdentifier, searchResult){
+    const lats = [
+      sortedSites.features[siteIdentifier].geometry.coordinates[1],
+      searchResult.coordinates[1]
+    ];
+
+    const lons = [
+      sortedSites.features[siteIdentifier].geometry.coordinates[0],
+      searchResult.coordinates[0]
+    ];
+
+    const sortedLons = lons.sort( (a, b) => sortCoords(a, b) );
+    const sortedLats = lats.sort( (a, b) => sortCoords(a, b) );
+    
+    // returns the lower left and the upper right corners of the bounding box
+    return [
+      [sortedLons[0], sortedLats[0]],
+      [sortedLons[1], sortedLats[1]]
+    ];
+  };
+
   // defining how to sort lats and longs
   function sortCoords(a, b){
     if(a > b){
