@@ -6,6 +6,7 @@
 * 2021.09.23 sort-search-sites-by-distance
   - Search and sorts the sites by distance.
   - And other event such as sorting, bound boxing, highlighting mapbox markers and list items. 
+  - Most functionality has been completed at this point, the rest is refinment. 
 
 * 2021.09.22 mapbox-markers
   - Add markers to mapbox map.
