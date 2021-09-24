@@ -153,6 +153,12 @@ export default function MapBox() {
       link.id = `link-${properties.id}`;
       link.innerHTML = `${properties.address}`;
 
+      // show the distance in the list item if it is cacluated by the geocoder
+      // if(properties.distance){ // TODO: REDUNDENT CODE SHOULD PUT THIS IN A FUNCTION
+      //   const roundedDistance = Math.round(properties.distance * 100) / 100;
+      //   link.innerHTML += `<div><strong>${roundedDistance} miles away </div></strong>`;
+      // }
+
       // adding flyto and popup events to links
       link.addEventListener('click', function(){
         for (const feature of features) { // this might be improved by not iterating over n features
