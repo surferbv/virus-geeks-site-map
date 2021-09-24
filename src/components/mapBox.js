@@ -184,7 +184,7 @@ export default function MapBox() {
       }
       if(properties.distance){
         const roundedDistance = Math.round(properties.distance * 100) / 100;
-        details.innerHTML += `<div><string> ${roundedDistance} </div></string>`;
+        details.innerHTML += `<div><string> ${roundedDistance} miles away </div></string>`;
       }
     }
   };
