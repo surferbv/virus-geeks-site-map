@@ -1,22 +1,27 @@
-# Getting Started with Create React App
-
-## External Libraries 
+# Getting Started with VG Interactive Site Map
 
 
+## External Libraries
+### mapbox-gl
+https://yarnpkg.com/package/mapbox-gl#readme
+### `yarn add mapbox-gl`
+
+### material-ui
+https://mui.com/getting-started/installation/
+### `yarn add @mui/material @emotion/react @emotion/styled`
+### `yarn add @mui/icons-material`
+
+### Turf
+https://turfjs.org/getting-started/
+### `yarn add @turf/turf`
+
+### mapbox-gl-geocoder
+### `yarn add @mapbox/mapbox-gl-geocoder`
 
 ## Getting Started
 In the project directory, run the following:
 
-## mapbox-gl
-https://yarnpkg.com/package/mapbox-gl#readme
-### yarn add mapbox-gl
-
-## material-ui
-https://mui.com/getting-started/installation/
-### yarn add @mui/material @emotion/react @emotion/styled
-### yarn add @mui/icons-material
-
-## running the app locally
+## Running The App
 ### `yarn install` if it's your first time running the app
 ### `yarn start`
 Runs the app in the development mode.\

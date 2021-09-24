@@ -1,6 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import Alert from "@mui/material/Alert";
+import * as turf from '@turf/turf';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 
 mapboxgl.accessToken =
@@ -25,9 +28,9 @@ export default function MapBox() {
     fetch(siteApiUrl)
     .then(res => res.json())
     .then(
-      (result) => {
+      (response) => {
         setIsLoaded(true);
-        const sites = result;
+        const sites = response;
 
         // add unique id to each site
         sites.features.forEach((site, i)=>{
@@ -51,18 +54,61 @@ export default function MapBox() {
             data: sites
           });
 
-          // add layer
-          // map.current.addLayer({
-          //   'id': 'sites-layer',
-          //   'type': 'circle',
-          //   'source': 'sites',
-          //   'paint': {
-          //     'circle-radius': 8,
-          //     'circle-stroke-width': 2,
-          //     'circle-color': 'red',
-          //     'circle-stroke-color': 'white'
-          //   }
-          // });
+          // init new geocoder
+          const geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl, // set instance of mapboxgl
+            marker: true, // geocoder default marker style TODO: REMOVE LATER?
+            // bbox: [-77.210763, 38.803367, -76.853675, 39.052643] // set defaut bounding box in coords TODO: REMOVE LATER?
+          });
+
+          // save results of geocoder
+          geocoder.on('result',({result})=>{
+            const searchResult = result.geometry;
+
+            // find dist from all locations in miles NOTE: This goes throught all the locs even if they are not displayed. 
+            const options = {units: 'miles'};
+
+            // calculating distance of each site from the search result geocoder
+            for(const site of sites.features){
+              site.properties.distance = turf.distance( // call to turf to cal distance
+                searchResult,
+                site.geometry,
+                options
+              );
+            }
+
+            // sorting sites by distance
+            sites.features.sort((a, b) => {
+              if (a.properties.distance > b.properties.distance) {
+                return 1;
+              }
+              if (a.properties.distance < b.properties.distance) {
+                return -1;
+              }
+              return 0; // a must be equal to b
+            });
+
+            // remove current list of sites, rebuild, and reorder
+            const listings = document.getElementById('listings');
+            while (listings.firstChild) {
+              listings.removeChild(listings.firstChild);
+            }
+
+            // rebuild the list of sites sorted by distance from searched results
+            buildLocationList(sites);
+
+            // highlight the nearest site item in the list
+            const activeListing = document.getElementById( `listing-${sites.features[0].properties.id}`);
+            activeListing.classList.add('active');
+
+            // sets a bouding box with the search result and the nearest site in it
+            const bbox = getBbox(sites, 0, searchResult);
+            map.current.fitBounds(bbox, {padding: 100});
+            createPopUp(sites.features[0]);
+          });
+
+          map.current.addControl(geocoder, 'top-left');
 
           buildLocationList(sites);
           addMarkers(sites);
@@ -79,7 +125,7 @@ export default function MapBox() {
     
   }, [siteApiUrl]); // this will allow to update automatically for any state changes
 
-  // for troubleshooting and showing coordinates sidebar
+  // for troubleshooting and showing coordinates sidebar TODO: NOT BEING USED REMOVE LATER.
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
     
@@ -112,6 +158,12 @@ export default function MapBox() {
       link.id = `link-${properties.id}`;
       link.innerHTML = `${properties.address}`;
 
+      // show the distance in the list item if it is cacluated by the geocoder
+      // if(properties.distance){ // TODO: REDUNDENT CODE SHOULD PUT THIS IN A FUNCTION
+      //   const roundedDistance = Math.round(properties.distance * 100) / 100;
+      //   link.innerHTML += `<div><strong>${roundedDistance} miles away </div></strong>`;
+      // }
+
       // adding flyto and popup events to links
       link.addEventListener('click', function(){
         for (const feature of features) { // this might be improved by not iterating over n features
@@ -137,11 +189,10 @@ export default function MapBox() {
       }
       if(properties.distance){
         const roundedDistance = Math.round(properties.distance * 100) / 100;
-        details.innerHTML += `<div><string> ${roundedDistance} </div></string>`;
+        details.innerHTML += `<div><string> ${roundedDistance} miles away </div></string>`;
       }
     }
   };
-  
 
   // event action to fly to location of site on map
   function flyToSite(currentFeature){
@@ -161,7 +212,6 @@ export default function MapBox() {
     .setLngLat(currentFeature.geometry.coordinates)
     .setHTML(`<h3>Virus Geeks</h3><h4>${currentFeature.properties.address}</h4>`)
     .addTo(map.current);
-    console.log(popup);
   };
 
   // adds markers
@@ -193,6 +243,38 @@ export default function MapBox() {
     }
   };
 
+  // geocoder bounding box results
+  function getBbox(sortedSites, siteIdentifier, searchResult){
+    const lats = [
+      sortedSites.features[siteIdentifier].geometry.coordinates[1],
+      searchResult.coordinates[1]
+    ];
+
+    const lons = [
+      sortedSites.features[siteIdentifier].geometry.coordinates[0],
+      searchResult.coordinates[0]
+    ];
+
+    const sortedLons = lons.sort( (a, b) => sortCoords(a, b) );
+    const sortedLats = lats.sort( (a, b) => sortCoords(a, b) );
+    
+    // returns the lower left and the upper right corners of the bounding box
+    return [
+      [sortedLons[0], sortedLats[0]],
+      [sortedLons[1], sortedLats[1]]
+    ];
+  };
+
+  // defining how to sort lats and longs
+  function sortCoords(a, b){
+    if(a > b){
+      return 1;
+    }
+    if(a.distance < b.distance){
+      return -1;
+    }
+    return 0;
+  };
 
   // displaying fetch error to the ui
   if (error) {
