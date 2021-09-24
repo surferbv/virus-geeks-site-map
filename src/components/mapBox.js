@@ -102,6 +102,10 @@ export default function MapBox() {
             const activeListing = document.getElementById( `listing-${sites.features[0].properties.id}`);
             activeListing.classList.add('active');
 
+            // sets a bouding box with the search result and the nearest site in it
+            const bbox = getBbox(sites, 0, searchResult);
+            map.current.fitBounds(bbox, {padding: 100});
+            createPopUp(sites.features[0]);
           });
 
           map.current.addControl(geocoder, 'top-left');
