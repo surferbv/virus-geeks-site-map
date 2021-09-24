@@ -239,6 +239,17 @@ export default function MapBox() {
     }
   };
 
+  // defining how to sort lats and longs
+  function sortCoords(a, b){
+    if(a > b){
+      return 1;
+    }
+    if(a.distance < b.distance){
+      return -1;
+    }
+    return 0;
+  };
+
   // displaying fetch error to the ui
   if (error) {
     return( 
