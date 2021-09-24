@@ -62,6 +62,23 @@ export default function MapBox() {
             // bbox: [-77.210763, 38.803367, -76.853675, 39.052643] // set defaut bounding box in coords TODO: REMOVE LATER?
           });
 
+          // save results of geocoder
+          geocoder.on('result',({result})=>{
+            const searchResult = result.geometry;
+
+            // find dist from all locations in miles NOTE: This goes throught all the locs even if they are not displayed. 
+            const options = {units: 'miles'};
+
+            for(const site of sites.features){
+              site.properties.distance = turf.distance( // call to turf to cal distance
+                searchResult,
+                site.geometry,
+                options
+              );
+            }
+
+          });
+
           map.current.addControl(geocoder, 'top-left');
 
           buildLocationList(sites);
