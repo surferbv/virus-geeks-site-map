@@ -77,6 +77,30 @@ export default function MapBox() {
               );
             }
 
+            // sorting sites by distance
+            sites.features.sort((a, b) => {
+              if (a.properties.distance > b.properties.distance) {
+                return 1;
+              }
+              if (a.properties.distance < b.properties.distance) {
+                return -1;
+              }
+              return 0; // a must be equal to b
+            });
+
+            // remove current list of sites, rebuild, and reorder
+            const listings = document.getElementById('listings');
+            while (listings.firstChild) {
+              listings.removeChild(listings.firstChild);
+            }
+
+            // rebuild the list of sites
+            buildLocationList(sites);
+
+            // highlight the nearest site item in the list
+            const activeListing = document.getElementById( `listing-${sites.features[0].properties.id}`);
+            activeListing.classList.add('active');
+
           });
 
           map.current.addControl(geocoder, 'top-left');
