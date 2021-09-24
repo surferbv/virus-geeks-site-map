@@ -95,7 +95,7 @@ export default function MapBox() {
               listings.removeChild(listings.firstChild);
             }
 
-            // rebuild the list of sites
+            // rebuild the list of sites sorted by distance from searched results
             buildLocationList(sites);
 
             // highlight the nearest site item in the list
