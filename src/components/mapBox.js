@@ -69,6 +69,7 @@ export default function MapBox() {
             // find dist from all locations in miles NOTE: This goes throught all the locs even if they are not displayed. 
             const options = {units: 'miles'};
 
+            // calculating distance of each site from the search result geocoder
             for(const site of sites.features){
               site.properties.distance = turf.distance( // call to turf to cal distance
                 searchResult,
