@@ -4,7 +4,7 @@ import Alert from "@mui/material/Alert";
 import * as turf from '@turf/turf';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-
+import SideBar from './sidebar';
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYnZhcmdhcyIsImEiOiJja3RuajM5YXYwM2EyMzBwOXg1eWhyZHN6In0.rxrzHoPOPsxAbmBd1qsDgg";
@@ -297,13 +297,8 @@ export default function MapBox() {
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
         </div> */}
   
-        {/* For site listing side bar */}
-        <div className="sidebar">
-          <div className="heading">
-          </div>
-          <div id="listings" className="listings"></div>
-        </div>
-  
+        <SideBar/>
+
         {/* For map map container  */}
         <div ref={mapContainer} className="map-container" />
       </div>
