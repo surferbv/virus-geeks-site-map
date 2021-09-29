@@ -1,8 +1,6 @@
 import React from "react";
 
-{
-  /* For showing site listing side bar */
-}
+// for displaying site listing side bar component
 export default function SideBar(props) {
   return (
     <div className="sidebar">
