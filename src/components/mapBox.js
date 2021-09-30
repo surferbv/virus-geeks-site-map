@@ -108,9 +108,13 @@ export default function MapBox() {
             createPopUp(sites.features[0]);
           });
 
+          // add geocoder i.e. search bar 
           map.current.addControl(geocoder, 'top-left');
 
+          // build the location list
           buildLocationList(sites);
+
+          // add map markers
           addMarkers(sites);
         });
 
@@ -148,6 +152,7 @@ export default function MapBox() {
 
       // assign a unique id to the listing
       listing.id = `listing-${properties.id}`;
+
       // give each item class name 
       listing.className = 'item';
 
