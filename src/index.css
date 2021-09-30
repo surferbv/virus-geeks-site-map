@@ -101,6 +101,7 @@ code {
 }
 
 /* geocoder styling i.e. search bar*/
+/* TODO: THIS IS NOT DOING ANYTHING */
 .mapboxgl-ctrl-geocoder {
   border: 0;
   border-radius: 0;
@@ -110,6 +111,7 @@ code {
   margin-top: 0;
 }
 
+/* TODO: THIS IS NOT DOING ANYTHING */
 .mapboxgl-ctrl-geocoder > div {
   min-width: 100%;
   margin-left: 0;
