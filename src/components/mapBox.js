@@ -5,6 +5,7 @@ import * as turf from '@turf/turf';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import SideBar from './sidebar';
+import Grid from '@mui/material/Grid';
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYnZhcmdhcyIsImEiOiJja3RuajM5YXYwM2EyMzBwOXg1eWhyZHN6In0.rxrzHoPOPsxAbmBd1qsDgg";
@@ -297,15 +298,27 @@ export default function MapBox() {
   } else {
     return (
       <div>
-        {/* For deubug of lng and lat */}
-        {/* <div className="locsidebar">
-          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-        </div> */}
-  
-        <SideBar/>
+       
+        
+        <Grid container
+          spacing={0}
+        >
+          <Grid item xs={12} >
+            <div className="" >  </div>
 
-        {/* For map map container  */}
-        <div ref={mapContainer} className="map-container" />
+          </Grid>
+          <Grid item xs order={{xs: 3, sm: 2}} sx={{backgroundColor: 'red'}}>
+          <SideBar />     
+
+
+          </Grid>
+          <Grid item xs={12} sm={8} md={9} order={{xs: 2, sm: 3}}  >
+          
+          <div ref={mapContainer} className="map-container" />
+
+          </Grid>
+        </Grid>
+
       </div>
     );
   }
