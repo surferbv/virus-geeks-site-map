@@ -28,22 +28,22 @@ code {
   margin: 12px;
   border-radius: 4px;
 }
+
+/* side bar styles */
 .sidebar {
   background-color: rgba(12, 130, 114, .9);
-  position: absolute;
-  width: 250px;
+  
   height: 800px;
-  z-index: 1;
+  
   overflow: hidden;
-  border-right: 8px solid rgba(0, 0, 0, 0.25);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-right: 0px solid rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
 }
 
 /* listing styles on side bar of map */
 .listings {
   height: 100%;
-  overflow: auto;
+  
   padding-bottom: 60px;
 }
 
