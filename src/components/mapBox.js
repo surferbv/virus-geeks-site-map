@@ -111,6 +111,8 @@ export default function MapBox() {
 
           // add geocoder i.e. search bar 
           map.current.addControl(geocoder, 'top-left');
+          // geocoder.addTo('#geocoder-container');
+
 
           // build the location list
           buildLocationList(sites);
@@ -298,24 +300,23 @@ export default function MapBox() {
   } else {
     return (
       <div>
-       
         
         <Grid container
           spacing={0}
         >
           <Grid item xs={12} >
-            <div className="" >  </div>
+            {/* <p>
+              <div id="geocoder-container" /> 
+            </p> */}
 
           </Grid>
-          <Grid item xs order={{xs: 3, sm: 2}} sx={{backgroundColor: 'red'}}>
-          <SideBar />     
 
-
+          <Grid item xs order={{xs: 3, sm: 2}}>
+            <SideBar />     
           </Grid>
+
           <Grid item xs={12} sm={8} md={9} order={{xs: 2, sm: 3}}  >
-          
-          <div ref={mapContainer} className="map-container" />
-
+            <div ref={mapContainer} className="map-container" />
           </Grid>
         </Grid>
 
