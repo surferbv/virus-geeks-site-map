@@ -37,7 +37,7 @@ code {
   
   overflow: hidden;
   border-right: 0px solid rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 
 /* listing styles on side bar of map */
