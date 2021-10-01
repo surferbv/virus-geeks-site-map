@@ -101,22 +101,7 @@ code {
 }
 
 /* geocoder styling i.e. search bar*/
-/* TODO: THIS IS NOT DOING ANYTHING */
-.mapboxgl-ctrl-geocoder {
-  border: 0;
-  border-radius: 0;
-  position: relative;
-  top: 0;
-  width: 800px;
-  margin-top: 0;
-}
-
-/* TODO: THIS IS NOT DOING ANYTHING */
-.mapboxgl-ctrl-geocoder > div {
-  min-width: 100%;
-  margin-left: 0;
-}
-
-.mapboxgl-ctrl{
-  right: -280px;
-}
+/* #geocoder-container{
+  background-color: #ffffff;
+  padding: 20px;
+} */
