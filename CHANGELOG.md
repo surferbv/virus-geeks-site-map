@@ -1,4 +1,5 @@
 * 2021.09.24 fine-tune-view-and-data
+  - Add material ui to sidebar list and map area.
   - Change the data format to match the specs.
   - Change the data to match site locations.
   - Add forwad geocoder for sites with no lat and lon.
