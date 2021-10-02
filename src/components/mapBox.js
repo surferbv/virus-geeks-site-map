@@ -96,10 +96,10 @@ export default function MapBox() {
             });
 
             // remove current list of sites, rebuild, and reorder
-            const listings = document.getElementById('listings');
-            while (listings.firstChild) {
-              listings.removeChild(listings.firstChild);
-            }
+            // const listings = document.getElementById('listings');
+            // while (listings.firstChild) {
+            //   listings.removeChild(listings.firstChild);
+            // }
 
             // rebuild the list of sites sorted by distance from searched results
             buildLocationList(sites);
