@@ -233,6 +233,63 @@ export default function MapBox() {
         }
         link.parentNode.classList.add('active');
       });
+    
+    // for ( const { properties } of features ){
+
+    //   // new listing section for side bar
+    //   const listings = document.getElementById('listings'); 
+    //   const listing = listings.appendChild(document.createElement('div'));
+
+    //   // assign a unique id to the listing
+    //   listing.id = `listing-${properties.id}`;
+
+    //   // give each item class name 
+    //   listing.className = 'item';
+
+    //   // create and add a link to the individual listing above
+    //   const link = listing.appendChild(document.createElement('a'));
+    //   link.href = '#';
+    //   link.className = 'title';
+    //   link.id = `link-${properties.id}`; 
+    //   link.innerHTML = `${properties.address}`;
+
+    //   // show the distance in the list item if it is cacluated by the geocoder
+    //   // if(properties.distance){ // TODO: REDUNDENT CODE SHOULD PUT THIS IN A FUNCTION
+    //   //   const roundedDistance = Math.round(properties.distance * 100) / 100;
+    //   //   link.innerHTML += `<div><strong>${roundedDistance} miles away </div></strong>`;
+    //   // }
+
+    //   // adding flyto and popup events to links
+    //   link.addEventListener('click', function(){ 
+    //     for (const feature of features) { // this might be improved by not iterating over n features
+    //       if (link.id === `link-${feature.properties.id}`) {
+    //         flyToSite(feature);
+    //         createPopUp(feature);
+    //       }
+    //     }
+
+    //     // setting active items css on sidebar
+    //     const activeItem = document.getElementsByClassName('active');  <<<<<<<<<<<<<<<<<<<<<< I'm here
+    //     if(activeItem[0]){
+    //       activeItem[0].classList.remove('active');
+    //     }
+    //     link.parentNode.classList.add('active');
+    //   });
+
+    //   // add details to each listing
+    //   const details = listing.appendChild(document.createElement('div'));
+    //   details.innerHTML = `${properties.city}`;
+    //   if(properties.phone){
+    //     details.innerHTML += `. ${properties.phoneFormatted}`;
+    //   }
+    //   if(properties.distance){
+    //     const roundedDistance = Math.round(properties.distance * 100) / 100;
+    //     details.innerHTML += `<div><string> ${roundedDistance} miles away </div></string>`;
+    //   }
+    // }
+    // addes the finished site cards to the dom
+    ReactDOM.render(site_cards , document.getElementById('listings'));
+  };
 
       // add details to each listing
       const details = listing.appendChild(document.createElement('div'));
