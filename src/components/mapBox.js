@@ -151,25 +151,6 @@ export default function MapBox() {
   
   // build location list, create items, links, popups, and add event listeners
   function buildLocationList( {features} ){ // placeing a var in {} makes it an object
-    
-    for ( const { properties } of features ){
-
-      // new listing section for side bar
-      const listings = document.getElementById('listings'); 
-      const listing = listings.appendChild(document.createElement('div'));
-
-      // assign a unique id to the listing
-      listing.id = `listing-${properties.id}`;
-
-      // give each item class name 
-      listing.className = 'item';
-
-      // create and add a link to the individual listing above
-      const link = listing.appendChild(document.createElement('a'));
-      link.href = '#';
-      link.className = 'title';
-      link.id = `link-${properties.id}`;
-      link.innerHTML = `${properties.address}`;
     const container = <Grid container> </Grid>
 
     const site_cards = features.map(({properties}) => {
