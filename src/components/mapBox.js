@@ -192,28 +192,12 @@ export default function MapBox() {
          
         
 
-      // show the distance in the list item if it is cacluated by the geocoder
-      // if(properties.distance){ // TODO: REDUNDENT CODE SHOULD PUT THIS IN A FUNCTION
-      //   const roundedDistance = Math.round(properties.distance * 100) / 100;
-      //   link.innerHTML += `<div><strong>${roundedDistance} miles away </div></strong>`;
-      // }
 
-      // adding flyto and popup events to links
-      link.addEventListener('click', function(){
-        for (const feature of features) { // this might be improved by not iterating over n features
-          if (link.id === `link-${feature.properties.id}`) {
-            flyToSite(feature);
-            createPopUp(feature);
-          }
-        }
+        </Card>
+      )
+    });
+    
 
-        // setting active items css on sidebar
-        const activeItem = document.getElementsByClassName('active');
-        if(activeItem[0]){
-          activeItem[0].classList.remove('active');
-        }
-        link.parentNode.classList.add('active');
-      });
     
     // for ( const { properties } of features ){
 
