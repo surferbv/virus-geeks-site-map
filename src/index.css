@@ -31,19 +31,15 @@ code {
 
 /* side bar styles */
 .sidebar {
-  background-color: rgba(12, 130, 114, .9);
-  
+  /* background-color: rgba(12, 130, 114, .9); */
   height: 800px;
-  
   overflow: hidden;
   border-right: 0px solid rgba(0, 0, 0, 0.25);
-  /* border-radius: 20px; */
 }
 
 /* listing styles on side bar of map */
-.listings {
+/* .listings {
   height: 100%;
-  
   padding-bottom: 60px;
 }
 
@@ -68,7 +64,7 @@ code {
 
 .listings .item.active {
   background-color: #f8f8f8;
-}
+} */
 
 ::-webkit-scrollbar {
   width: 0px;
