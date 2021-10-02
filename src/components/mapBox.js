@@ -267,6 +267,10 @@ export default function MapBox() {
         details.innerHTML += `<div><string> ${roundedDistance} miles away </div></string>`;
       }
     }
+  function roundDistance(distance){
+    const roundedDistance = Math.round(distance * 100) / 100;
+    if(!roundedDistance) return;
+    return `${roundedDistance} miles away`;
   };
 
   // event action to fly to location of site on map
