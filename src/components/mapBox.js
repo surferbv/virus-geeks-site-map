@@ -170,6 +170,46 @@ export default function MapBox() {
       link.className = 'title';
       link.id = `link-${properties.id}`;
       link.innerHTML = `${properties.address}`;
+    const container = <Grid container> </Grid>
+
+    const site_cards = features.map(({properties}) => {
+      return(
+        <Card key={`listing-${properties.id}`} 
+              id={`listing-${properties.id}`} 
+              className = 'item'
+              elevation={14}
+              sx={{ margin: 2, padding: 1}}
+        >
+          <Link href="#" 
+                underline="hover" 
+                className='title' 
+                id={`link-${properties.id}`}
+                onClick={() => {
+                  for (const feature of features) { // this might be improved by not iterating over n features
+                    if (`link-${properties.id}` === `link-${feature.properties.id}`) {
+                      flyToSite(feature);
+                      createPopUp(feature);
+                    }
+                  }
+                  
+                  const activeItem = document.getElementsByClassName('active'); 
+                  if(activeItem[0]){
+                    activeItem[0].classList.remove('active');
+                  }
+                  // this.Link.parentNode.classList.add('active'); 
+                }}
+          >
+            {`${properties.address}`}
+          </Link>
+
+          <Stack spacing={1} className={'details'}>
+            <div> {properties.phoneFormatted} </div>
+
+            <div> {roundDistance(properties.distance)}</div>
+
+          </Stack>
+         
+        
 
       // show the distance in the list item if it is cacluated by the geocoder
       // if(properties.distance){ // TODO: REDUNDENT CODE SHOULD PUT THIS IN A FUNCTION
