@@ -6,6 +6,11 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import SideBar from './sidebar';
 import Grid from '@mui/material/Grid';
+import ReactDOM from 'react-dom';
+import Card from '@mui/material/Card';
+import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
+
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYnZhcmdhcyIsImEiOiJja3RuajM5YXYwM2EyMzBwOXg1eWhyZHN6In0.rxrzHoPOPsxAbmBd1qsDgg";
