@@ -256,17 +256,6 @@ export default function MapBox() {
     ReactDOM.render(site_cards , document.getElementById('listings'));
   };
 
-      // add details to each listing
-      const details = listing.appendChild(document.createElement('div'));
-      details.innerHTML = `${properties.city}`;
-      if(properties.phone){
-        details.innerHTML += `. ${properties.phoneFormatted}`;
-      }
-      if(properties.distance){
-        const roundedDistance = Math.round(properties.distance * 100) / 100;
-        details.innerHTML += `<div><string> ${roundedDistance} miles away </div></string>`;
-      }
-    }
   function roundDistance(distance){
     const roundedDistance = Math.round(distance * 100) / 100;
     if(!roundedDistance) return;
