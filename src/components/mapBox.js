@@ -169,6 +169,7 @@ export default function MapBox() {
             </Grid>
             <Grid item>
               <Link href="#" 
+                    color="primary"
                     underline="hover" 
                     className='title' 
                     id={`link-${properties.id}`}
