@@ -188,11 +188,13 @@ export default function MapBox() {
                       // this.Link.parentNode.classList.add('active'); 
                     }}
               >
-                {`${properties.address}`}
+                {properties.city}
               </Link>
               <Stack spacing={1} className={'details'}>
+                <div> {properties.address},{properties.city}, {properties.state} {properties.postalCode} </div>
                 <div> {properties.phoneFormatted} </div>
                 <div> {roundDistance(properties.distance)}</div>
+                <Button variant="contained" size="small"> Book at this location </Button>
               </Stack>
             </Grid>
           </Grid>
