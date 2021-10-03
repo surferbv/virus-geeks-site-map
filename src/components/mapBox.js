@@ -10,7 +10,8 @@ import ReactDOM from 'react-dom';
 import Card from '@mui/material/Card';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-
+import Avatar from '@mui/material/Avatar';
+import logo from "../../src/assets/vg_marker.png";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYnZhcmdhcyIsImEiOiJja3RuajM5YXYwM2EyMzBwOXg1eWhyZHN6In0.rxrzHoPOPsxAbmBd1qsDgg";
@@ -161,38 +162,38 @@ export default function MapBox() {
               elevation={14}
               sx={{ margin: 2, padding: 1}}
         >
-          <Link href="#" 
-                underline="hover" 
-                className='title' 
-                id={`link-${properties.id}`}
-                onClick={() => {
-                  for (const feature of features) { // this might be improved by not iterating over n features
-                    if (`link-${properties.id}` === `link-${feature.properties.id}`) {
-                      flyToSite(feature);
-                      createPopUp(feature);
-                    }
-                  }
-                  
-                  const activeItem = document.getElementsByClassName('active'); 
-                  if(activeItem[0]){
-                    activeItem[0].classList.remove('active');
-                  }
-                  // this.Link.parentNode.classList.add('active'); 
-                }}
-          >
-            {`${properties.address}`}
-          </Link>
-
-          <Stack spacing={1} className={'details'}>
-            <div> {properties.phoneFormatted} </div>
-
-            <div> {roundDistance(properties.distance)}</div>
-
-          </Stack>
-         
-        
-
-
+          <Grid container spacing={2} >
+            <Grid item> 
+              <Avatar alt="virus geeks" src={logo}/>
+            </Grid>
+            <Grid item>
+              <Link href="#" 
+                    underline="hover" 
+                    className='title' 
+                    id={`link-${properties.id}`}
+                    onClick={() => {
+                      for (const feature of features) { // this might be improved by not iterating over n features
+                        if (`link-${properties.id}` === `link-${feature.properties.id}`) {
+                          flyToSite(feature);
+                          createPopUp(feature);
+                        }
+                      }
+                      
+                      const activeItem = document.getElementsByClassName('active'); 
+                      if(activeItem[0]){
+                        activeItem[0].classList.remove('active');
+                      }
+                      // this.Link.parentNode.classList.add('active'); 
+                    }}
+              >
+                {`${properties.address}`}
+              </Link>
+              <Stack spacing={1} className={'details'}>
+                <div> {properties.phoneFormatted} </div>
+                <div> {roundDistance(properties.distance)}</div>
+              </Stack>
+            </Grid>
+          </Grid>
         </Card>
       )
     });
