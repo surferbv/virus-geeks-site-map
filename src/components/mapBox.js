@@ -29,6 +29,22 @@ export default function MapBox() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [siteApiUrl, setSiteApiUrl] = useState("https://temp-tank.s3.us-west-1.amazonaws.com/sitedata.geojson");
+  // const vgSite = "https://my.virusgeeks.com/";
+
+  // operation big nose! 
+  // useEffect(() =>{
+  //   fetch(vgSite).then(function (response) {
+  //     // The API call was successful!
+  //     return response.text().querySelector('#__NEXT_DATA__');
+  //     // return response.text();
+  //   }).then(function (data) {
+  //     // This is the JSON from our response
+  //     console.log(data);
+  //   }).catch(function (err) {
+  //     // There was an error
+  //     console.warn('Operation big nose did not succeed', err);
+  //   });
+  // });
 
   // to looad and setup the map
   useEffect(() => {
@@ -50,7 +66,7 @@ export default function MapBox() {
           container: mapContainer.current,
           style: "mapbox://styles/mapbox/streets-v11",
           center: [lng, lat],
-          zoom: zoom,
+          zoom: zoom
         }); 
 
         // will fire once the map has loaded
