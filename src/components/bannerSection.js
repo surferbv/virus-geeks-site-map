@@ -9,7 +9,7 @@ import Button from "@mui/material/Button";
 
 export default function BannerSection() {
   return (
-    <Box sx={{ flexGrow: 1, pb: 15 }}>
+    <Box sx={{ flexGrow: 1, pb: 8 }}>
       <AppBar position="fixed" sx={{ pl: 1, pr: 4, background: "white" }}>
         <Container>
           <Toolbar>
