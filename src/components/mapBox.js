@@ -14,6 +14,7 @@ import Avatar from '@mui/material/Avatar';
 import logo from "../../src/assets/vg_marker.png";
 import Button from "@mui/material/Button";
 
+
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYnZhcmdhcyIsImEiOiJja3RuajM5YXYwM2EyMzBwOXg1eWhyZHN6In0.rxrzHoPOPsxAbmBd1qsDgg";
 
@@ -82,14 +83,17 @@ export default function MapBox() {
           const geocoder = new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
             mapboxgl: mapboxgl, // set instance of mapboxgl
-            marker: true, // geocoder default marker style TODO: REMOVE LATER?
+            marker: true,
             // bbox: [-77.210763, 38.803367, -76.853675, 39.052643] // set defaut bounding box in coords TODO: REMOVE LATER?
+            placeholder: "Enter your location here",
           });
 
           // save results of geocoder
           geocoder.on('result',({result})=>{
             const searchResult = result.geometry;
 
+            // add marker of search location
+            const marker = new mapboxgl.Marker().setLngLat(searchResult.coordinates).addTo(map.current);
             // find dist from all locations in miles NOTE: This goes throught all the locs even if they are not displayed. 
             const options = {units: 'miles'};
 
@@ -133,9 +137,8 @@ export default function MapBox() {
           });
 
           // add geocoder i.e. search bar 
-          map.current.addControl(geocoder, 'top-left');
-          // geocoder.addTo('#geocoder-container');
-
+          geocoder.addTo('#geocoder-container');
+          // map.current.addControl(geocoder, 'top-left');
 
           // build the location list
           buildLocationList(sites);
@@ -385,11 +388,8 @@ export default function MapBox() {
         <Grid container
           spacing={0}
         >
-          <Grid item xs={12} >
-            {/* <p>
+          <Grid item xs={12} sx={{p: 1, pt: 3, pb: 3 }} align="center">
               <div id="geocoder-container" /> 
-            </p> */}
-
           </Grid>
 
           <Grid item xs order={{xs: 3, sm: 2}}>
