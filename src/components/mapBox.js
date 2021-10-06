@@ -266,7 +266,16 @@ export default function MapBox() {
 
   // adds a popup given a current feature
   function createPopUp(currentFeature){
-    const popUps = document.getElementsByClassName('mapboxgl-popup');
+    const myJsxObj = 
+    <Typography component='div'>
+      <Box> 
+        {currentFeature.properties.name} 
+      </Box>
+    </Typography>;
+  
+
+    createPopUpComp(myJsxObj, currentFeature);
+   
     // const popUps = document.getElementsByClassName('mapboxgl-popup');
     
     // if(popUps[0]) popUps[0].remove();
