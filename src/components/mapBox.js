@@ -253,6 +253,17 @@ export default function MapBox() {
     });
   };
 
+  // adds a popup but using react and material components
+  function createPopUpComp(jsxElement, currentFeature){
+    const placeholder = document.createElement('div');
+    ReactDOM.render(jsxElement, placeholder);
+    
+    const popup = new mapboxgl.Popup({ closeOnClick: false })
+      .setDOMContent(placeholder)
+      .setLngLat(currentFeature.geometry.coordinates)
+      .addTo(map.current);
+  }
+
   // adds a popup given a current feature
   function createPopUp(currentFeature){
     const popUps = document.getElementsByClassName('mapboxgl-popup');
