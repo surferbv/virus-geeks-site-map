@@ -267,13 +267,14 @@ export default function MapBox() {
   // adds a popup given a current feature
   function createPopUp(currentFeature){
     const popUps = document.getElementsByClassName('mapboxgl-popup');
+    // const popUps = document.getElementsByClassName('mapboxgl-popup');
     
-    if(popUps[0]) popUps[0].remove();
+    // if(popUps[0]) popUps[0].remove();
     
-    const popup = new mapboxgl.Popup({ closeOnClick: false })
-    .setLngLat(currentFeature.geometry.coordinates)
-    .setHTML(`<h3>Virus Geeks</h3><h4>${currentFeature.properties.address}</h4>`)
-    .addTo(map.current);
+    // const popup = new mapboxgl.Popup({ closeOnClick: false })
+    // .setLngLat(currentFeature.geometry.coordinates)
+    // .setHTML(`<h3>Virus Geeks</h3><h4>${currentFeature.properties.name}</h4>`)
+    // .addTo(map.current);
   };
 
   // adds markers
