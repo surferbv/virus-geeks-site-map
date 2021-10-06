@@ -176,7 +176,6 @@ export default function MapBox() {
   
   // build location list, create items, links, popups, and add event listeners
   function buildLocationList( {features} ){ // placeing a var in {} makes it an object
-    const container = <Grid container> </Grid>
 
     const site_cards = features.map(({properties}) => {
       return(
