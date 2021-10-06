@@ -157,7 +157,9 @@ export default function MapBox() {
         console.log(error);
       }
     )
-    
+
+    // cleanup map when it unmounts
+    return() => map.current.remove();
   }, [siteApiUrl]); // this will allow to update automatically for any state changes
 
   // for troubleshooting and showing coordinates sidebar TODO: NOT BEING USED REMOVE LATER.
