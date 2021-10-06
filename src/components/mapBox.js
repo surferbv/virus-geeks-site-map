@@ -12,7 +12,9 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
 import logo from "../../src/assets/vg_marker.png";
-import Button from "@mui/material/Button";
+import Button from '@mui/material/Button';
+import { Typography } from '@mui/material';
+import Box from '@mui/material/Box';
 
 
 mapboxgl.accessToken =
@@ -139,7 +141,7 @@ export default function MapBox() {
           // add geocoder i.e. search bar 
           geocoder.addTo('#geocoder-container');
           // map.current.addControl(geocoder, 'top-left');
-
+          
           // build the location list
           buildLocationList(sites);
 
@@ -187,33 +189,40 @@ export default function MapBox() {
               <Avatar alt="virus geeks" src={logo}/>
             </Grid>
             <Grid item>
-              <Link href="#" 
-                    color="primary"
-                    underline="hover" 
-                    className='title' 
-                    id={`link-${properties.id}`}
-                    onClick={() => {
-                      for (const feature of features) { // this might be improved by not iterating over n features
-                        if (`link-${properties.id}` === `link-${feature.properties.id}`) {
-                          flyToSite(feature);
-                          createPopUp(feature);
+              <Stack spacing={2} className={'details'}>
+                <Link href="#" 
+                      color="primary"
+                      underline="hover" 
+                      className='title' 
+                      id={`link-${properties.id}`}
+                      onClick={() => {
+                        for (const feature of features) { // this might be improved by not iterating over n features
+                          if (`link-${properties.id}` === `link-${feature.properties.id}`) {
+                            flyToSite(feature);
+                            createPopUp(feature);
+                          }
                         }
-                      }
-                      
-                      const activeItem = document.getElementsByClassName('active'); 
-                      if(activeItem[0]){
-                        activeItem[0].classList.remove('active');
-                      }
-                      // this.Link.parentNode.classList.add('active'); 
-                    }}
-              >
-                {properties.city}
-              </Link>
-              <Stack spacing={1} className={'details'}>
-                <div> {properties.address},{properties.city}, {properties.state} {properties.postalCode} </div>
-                <div> {properties.phoneFormatted} </div>
-                <div> {roundDistance(properties.distance)}</div>
-                <Button variant="contained" size="small"> Book at this location </Button>
+                        
+                        const activeItem = document.getElementsByClassName('active'); 
+                        if(activeItem[0]){
+                          activeItem[0].classList.remove('active');
+                        }
+                        // this.Link.parentNode.classList.add('active'); 
+                      }}
+                >
+                  <strong>
+                    {properties.name}
+                  </strong>
+                </Link>
+                <Typography component="div" >
+                  <Box> {properties.address},{properties.city}, {properties.state} {properties.postalCode} </Box>
+                  <Box>Hours: </Box>
+
+                  <Box sx={{ color: 'info.main' }} > {properties.timeSlots[0].timeSlotName}  </Box>
+                  
+                  <Box> {roundDistance(properties.distance)}</Box>
+                </Typography>
+                <Button variant="contained" size="small" href={properties.testRegisterationUrl}> Book at this location </Button>
               </Stack>
             </Grid>
           </Grid>
