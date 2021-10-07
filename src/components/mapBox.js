@@ -238,19 +238,10 @@ export default function MapBox() {
     ReactDOM.render(site_cards , document.getElementById('listings'));
   };
 
-  // parses, check the time slot, and returns a properly formatted time slot
+  // parses, check the time slot, and returns a properly formatted time slot of boxes
   function returnTimeSlots(properties){
      const slotArray = properties.timeSlots
      var list = [];
-
-     for (const index in slotArray){
-       const slot = slotArray[index];
-       let startDayAbbr = ''
-       let endDayAbbr = ''
-       
-       // abbrivate the days and check if they exist
-       if(slot.startDay){
-         startDayAbbr = (slot.startDay.charAt(0).toUpperCase() + slot.startDay.slice(1)).substring(0,3); 
         }
        if(slot.endDay){
          endDayAbbr = (slot.endDay.charAt(0).toUpperCase() + slot.endDay.slice(1)).substring(0,3); 
