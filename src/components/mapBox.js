@@ -216,11 +216,16 @@ export default function MapBox() {
                   </strong>
                 </Link>
                 <Typography component="div" >
-                  <Box> {properties.address},{properties.city}, {properties.state} {properties.postalCode} </Box>
-                  <Box>Hours: </Box>
-
-                  <Box sx={{ color: 'info.main' }} > {properties.timeSlots[0].timeSlotName}  </Box>
-                  
+                  <Box> 
+                    {properties.address}
+                  </Box>
+                  <Box>
+                  {properties.city}, {properties.state} {properties.postalCode} 
+                  </Box>
+                  <Box>Hours:</Box>
+                  <Box sx={{ color: 'info.main' }} > 
+                    {returnTimeSlots(properties)}
+                  </Box>
                   <Box> {roundDistance(properties.distance)}</Box>
                 </Typography>
                 <Button variant="contained" size="small" href={properties.testRegisterationUrl}> Book at this location </Button>
