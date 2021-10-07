@@ -260,17 +260,20 @@ export default function MapBox() {
     // then remove it
     if(popUps[0]) popUps[0].remove(); 
 
+    // create a placeholder to add the component and renders it to the dom
     const placeholder = document.createElement('div');
     ReactDOM.render(jsxElement, placeholder);
     
     const popup = new mapboxgl.Popup({ closeOnClick: false })
-      .setDOMContent(placeholder)
+      .setDOMContent(placeholder) // this sets the control on the jsx component
       .setLngLat(currentFeature.geometry.coordinates)
       .addTo(map.current);
   }
 
   // adds a popup given a current feature
   function createPopUp(currentFeature){
+    
+    // the component to add to the popup
     const myJsxObj = 
     <Typography component='div'>
       <Box> 
