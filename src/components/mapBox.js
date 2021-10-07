@@ -86,7 +86,7 @@ export default function MapBox() {
             accessToken: mapboxgl.accessToken,
             mapboxgl: mapboxgl, // set instance of mapboxgl
             marker: true,
-            // bbox: [-77.210763, 38.803367, -76.853675, 39.052643] // set defaut bounding box in coords TODO: REMOVE LATER?
+            bbox: [-125.0011, 24.9493, -66.9326, 49.5904 ], // set defaut bounding box in coords based on North America
             placeholder: "Enter your location here",
           });
 
