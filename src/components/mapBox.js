@@ -306,7 +306,10 @@ export default function MapBox() {
           {currentFeature.properties.name} 
         </Typography>
         <Typography variant="body1" component='div'>
-          {currentFeature.properties.address}, {currentFeature.properties.city}, {currentFeature.properties.state} {currentFeature.properties.postalCode}
+          {currentFeature.properties.address} 
+        </Typography>
+        <Typography variant="body1" component='div'>
+          {currentFeature.properties.city}, {currentFeature.properties.state} {currentFeature.properties.postalCode}
         </Typography>
         <Button variant="contained" size="small" href={currentFeature.properties.testRegisterationUrl}> Book at this location </Button>
         <Button variant="contained" size="large" href="https://www.google.com/maps/" target="_blank" rel="noopener"> Directions </Button>
