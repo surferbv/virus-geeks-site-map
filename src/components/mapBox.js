@@ -276,6 +276,18 @@ export default function MapBox() {
     
     // the component to add to the popup
     const myJsxObj = 
+      <Stack spacing={1}> 
+        <Typography variant="h6" component='div'>
+          {currentFeature.properties.name} 
+        </Typography>
+        <Typography variant="body1" component='div'>
+          {currentFeature.properties.address}, {currentFeature.properties.city}, {currentFeature.properties.state} {currentFeature.properties.postalCode}
+        </Typography>
+        <Button variant="contained" size="small" href={currentFeature.properties.testRegisterationUrl}> Book at this location </Button>
+        <Button variant="contained" size="large" href="https://www.google.com/maps/" target="_blank" rel="noopener"> Directions </Button>
+      </Stack>;
+
+    createPopUpComp(myJsxObj, currentFeature); //TODO: Could remove this and add all it's functionality here
   };
 
   // adds markers
