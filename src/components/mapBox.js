@@ -301,11 +301,10 @@ export default function MapBox() {
   // adds a popup given a current feature
   function createPopUp(currentFeature){
 
+    // google link directions
     const lng = currentFeature.geometry.coordinates[0];
     const lat = currentFeature.geometry.coordinates[1];
     const googleLink = `https://www.google.com/maps/?q=${lat},${lng}`
-
-    console.log(googleLink);
 
     // the component to add to the popup
     const myJsxObj = 
@@ -319,6 +318,11 @@ export default function MapBox() {
         <Typography variant="body1" component='div'>
           {currentFeature.properties.city}, {currentFeature.properties.state} {currentFeature.properties.postalCode}
         </Typography>
+        <Typography variant="body1" component='div'>
+          {currentFeature.properties.phoneFormatted}
+        </Typography>
+        {currentFeature.properties.walkIn}
+        {currentFeature.properties.driveThru}
         <Button variant="contained" size="small" href={currentFeature.properties.testRegisterationUrl}> Book at this location </Button>
         <Button variant="contained" size="large" href={googleLink} target="_blank" rel="noopener"> Directions </Button>
       </Stack>;
