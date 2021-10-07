@@ -235,8 +235,28 @@ export default function MapBox() {
     ReactDOM.render(site_cards , document.getElementById('listings'));
   };
 
+  // parses, check the time slot, and returns a properly formatted time slot
   function returnTimeSlots(properties){
-    return(`TODO: STUFF HERE! ${properties}` )
+     const slotArray = properties.timeSlots
+     var list = [];
+
+     for (const index in slotArray){
+       const slot = slotArray[index];
+       let startDayAbbr = ''
+       let endDayAbbr = ''
+       
+       // abbrivate the days and check if they exist
+       if(slot.startDay){
+         startDayAbbr = (slot.startDay.charAt(0).toUpperCase() + slot.startDay.slice(1)).substring(0,3); 
+        }
+       if(slot.endDay){
+         endDayAbbr = (slot.endDay.charAt(0).toUpperCase() + slot.endDay.slice(1)).substring(0,3); 
+         endDayAbbr = '-' + endDayAbbr;
+       }
+       var li = document.createElement('li');
+       list.push(`${startDayAbbr}${endDayAbbr}: ${slot.startTime} - ${slot.endTime}`);
+     }
+     return(list);
   };
 
   function roundDistance(distance){
