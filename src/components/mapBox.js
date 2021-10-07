@@ -223,9 +223,7 @@ export default function MapBox() {
                   {properties.city}, {properties.state} {properties.postalCode} 
                   </Box>
                   <Box>Hours:</Box>
-                  <Box sx={{ color: 'info.main' }} > 
-                    {returnTimeSlots(properties)}
-                  </Box>
+                  {returnTimeSlots(properties)}
                   <Box> {roundDistance(properties.distance)}</Box>
                 </Typography>
                 <Button variant="contained" size="small" href={properties.testRegisterationUrl}> Book at this location </Button>
