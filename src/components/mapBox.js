@@ -255,6 +255,11 @@ export default function MapBox() {
 
   // adds a popup but using react and material components
   function createPopUpComp(jsxElement, currentFeature){
+    // if a popup exists already
+    const popUps = document.getElementsByClassName('mapboxgl-popup');
+    // then remove it
+    if(popUps[0]) popUps[0].remove(); 
+
     const placeholder = document.createElement('div');
     ReactDOM.render(jsxElement, placeholder);
     
