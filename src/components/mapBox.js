@@ -256,14 +256,14 @@ export default function MapBox() {
           endDayAbbr = (slot.endDay.charAt(0).toUpperCase() + slot.endDay.slice(1)).substring(0,3); 
           endDayAbbr = '-' + endDayAbbr;
         }
-       if(slot.endDay){
-         endDayAbbr = (slot.endDay.charAt(0).toUpperCase() + slot.endDay.slice(1)).substring(0,3); 
-         endDayAbbr = '-' + endDayAbbr;
-       }
-       var li = document.createElement('li');
-       list.push(`${startDayAbbr}${endDayAbbr}: ${slot.startTime} - ${slot.endTime}`);
-     }
-     return(list);
+        resultSlot = `${startDayAbbr}${endDayAbbr}: ${slot.startTime} - ${slot.endTime}`;
+      return(
+        <Box sx={{ color: 'info.main' }}>
+          {resultSlot}
+        </Box>
+      )
+    })
+  return(my_slots);
   };
 
   function roundDistance(distance){
