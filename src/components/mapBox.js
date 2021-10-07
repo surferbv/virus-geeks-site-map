@@ -242,6 +242,19 @@ export default function MapBox() {
   function returnTimeSlots(properties){
      const slotArray = properties.timeSlots
      var list = [];
+    
+    const my_slots = slotArray.map( (slot) => {
+        let startDayAbbr = ''
+        let endDayAbbr = ''
+        let resultSlot = ''
+
+        // abbrivate the days and check if they exist
+        if(slot.startDay){
+          startDayAbbr = (slot.startDay.charAt(0).toUpperCase() + slot.startDay.slice(1)).substring(0,3); 
+        }
+        if(slot.endDay){
+          endDayAbbr = (slot.endDay.charAt(0).toUpperCase() + slot.endDay.slice(1)).substring(0,3); 
+          endDayAbbr = '-' + endDayAbbr;
         }
        if(slot.endDay){
          endDayAbbr = (slot.endDay.charAt(0).toUpperCase() + slot.endDay.slice(1)).substring(0,3); 
