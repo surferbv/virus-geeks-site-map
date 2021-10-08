@@ -186,7 +186,7 @@ export default function MapBox() {
         <Card key={`listing-${properties.id}`} 
               id={`listing-${properties.id}`} 
               className = 'item'
-              elevation={8}
+              elevation={4}
               sx={{ margin: 2, padding: 1}}
         >
           <Grid container spacing={2} >
