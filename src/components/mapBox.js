@@ -188,9 +188,6 @@ export default function MapBox() {
               sx={{ margin: 2, padding: 1}}
         >
           <Grid container spacing={2} >
-            <Grid item> 
-              <Avatar alt="virus geeks" src={logo}/>
-            </Grid>
             <Grid item>
               <Stack spacing={2} className={'details'}>
                 <Link href="#" 
