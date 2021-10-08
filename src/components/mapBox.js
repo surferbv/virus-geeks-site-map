@@ -323,8 +323,18 @@ export default function MapBox() {
         <Typography variant="body1" component='div'>
           {currentFeature.properties.phoneFormatted}
         </Typography>
-        {currentFeature.properties.walkIn}
-        {currentFeature.properties.driveThru}
+        { currentFeature.properties.walkIn ? (
+          <Stack direction="row" spacing={1}>
+            <DirectionsWalkRoundedIcon color="primary" /> 
+            <Typography sx={{ color: 'info.main' }}>Walk-ins welcome! </Typography>
+          </Stack>
+        ) : false}
+        { currentFeature.properties.driveThru ? (
+          <Stack direction="row" spacing={1}>
+            <DirectionsCarRoundedIcon color="primary"/> 
+            <Typography sx={{ color: 'info.main' }}>Drive-thrus welcome!</Typography>
+          </Stack>
+        ) : false}
         <Button variant="contained" size="small" href={currentFeature.properties.testRegisterationUrl}> Book at this location </Button>
         <Button variant="contained" size="large" href={googleLink} target="_blank" rel="noopener"> Directions </Button>
       </Stack>;
