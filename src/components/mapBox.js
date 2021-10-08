@@ -15,6 +15,8 @@ import logo from "../../src/assets/vg_marker.png";
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
+import DirectionsWalkRoundedIcon from '@mui/icons-material/DirectionsWalkRounded';
+import DirectionsCarRoundedIcon from '@mui/icons-material/DirectionsCarRounded';
 
 
 mapboxgl.accessToken =
