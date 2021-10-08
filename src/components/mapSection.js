@@ -4,8 +4,6 @@ import MapCard from "./mapCard";
 
 export default function MapSection() {
   return (
-    <Container maxWidth="lg" sx={{ p: 4 }}>
       <MapCard />
-    </Container>
   );
 }
