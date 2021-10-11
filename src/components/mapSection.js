@@ -426,9 +426,10 @@ export default function MapBox() {
   } else {
     return (
       <div>
-        <Container>
+        <Container >
           <Grid container
             spacing={0}
+            sx={{mb: 5}}
           >
             <Grid item xs={12} sx={{p: 1, pt: 3, pb: 3 }} align="center">
                 <div id="geocoder-container" /> 
