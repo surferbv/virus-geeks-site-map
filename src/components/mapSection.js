@@ -183,6 +183,9 @@ export default function MapBox() {
   // build location list, create items, links, popups, and add event listeners
   function buildLocationList( {features} ){ // placeing a var in {} makes it an object
 
+    let theme = createTheme();
+    theme = responsiveFontSizes(theme)
+
     const site_cards = features.map(({properties}) => {
       return(
         <Card key={`listing-${properties.id}`} 
