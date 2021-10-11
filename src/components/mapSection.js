@@ -317,16 +317,16 @@ export default function MapBox() {
     // the component to add to the popup
     const myJsxObj = 
       <Stack spacing={1}> 
-        <Typography variant="h6" component='div'>
-          {currentFeature.properties.name} 
-        </Typography>
-        <Typography variant="body1" component='div'>
-          {currentFeature.properties.address} 
-        </Typography>
-        <Typography variant="body1" component='div'>
-          {currentFeature.properties.city}, {currentFeature.properties.state} {currentFeature.properties.postalCode}
-        </Typography>
-        <Typography variant="body1" component='div'>
+        <ThemeProvider theme={theme}>
+          <Typography variant="h6" component='div'>{currentFeature.properties.name} </Typography>
+          <Typography variant="body1" component='div'>
+            {currentFeature.properties.address} 
+          </Typography>
+          <Typography variant="body1" component='div'>
+            {currentFeature.properties.city}, {currentFeature.properties.state} {currentFeature.properties.postalCode}
+          </Typography>
+        </ThemeProvider>
+        {/* <Typography variant="body1" component='div'>
           {currentFeature.properties.phoneFormatted}
         </Typography>
         { currentFeature.properties.walkIn ? (
