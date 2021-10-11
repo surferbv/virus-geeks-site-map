@@ -264,11 +264,11 @@ export default function MapBox() {
           endDayAbbr = (slot.endDay.charAt(0).toUpperCase() + slot.endDay.slice(1)).substring(0,3); 
           endDayAbbr = '-' + endDayAbbr;
         }
+
+
         resultSlot = `${startDayAbbr}${endDayAbbr}: ${slot.startTime} - ${slot.endTime}`;
       return(
-        <Box sx={{ color: 'info.main' }}>
-          {resultSlot}
-        </Box>
+        <Box id={`slot-${index}${slot.timeSlotName}`} key={`slot-${index}${slot.length}`}>{startDayAbbr}{endDayAbbr}:{slot.startTime} - {slot.endTime}</Box>
       )
     })
   return(my_slots);
