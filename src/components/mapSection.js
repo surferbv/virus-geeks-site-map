@@ -237,7 +237,7 @@ export default function MapBox() {
                 </Stack>
               </Grid>
             </Grid>
-          </Grid>
+          </CardContent>
         </Card>
       )
     });
