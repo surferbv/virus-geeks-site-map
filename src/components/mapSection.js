@@ -34,15 +34,15 @@ export default function MapBox() {
   const [lat, setLat] = useState(37.6);
   const [zoom, setZoom] = useState(9);
   
-  const theme = useTheme();
-  const match = useMediaQuery(theme.breakpoints.down('sm'))
-
-  
   // used by fetch
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [siteApiUrl, setSiteApiUrl] = useState("https://temp-tank.s3.us-west-1.amazonaws.com/sitedata.geojson");
   // const vgSite = "https://my.virusgeeks.com/";
+
+  // used to adjust items sizing and row scrolling
+  let isSmall = useMediaQuery(useTheme().breakpoints.down('sm'));
+
 
   // operation big nose! 
   // useEffect(() =>{
