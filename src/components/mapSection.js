@@ -310,7 +310,6 @@ export default function MapBox() {
     const popup = new mapboxgl.Popup({ closeOnClick: false })
       .setDOMContent(placeholder) // this sets the control on the jsx component
       .setLngLat(currentFeature.geometry.coordinates)
-      .setMaxWidth('50')
       .addTo(map.current);
   }
 
