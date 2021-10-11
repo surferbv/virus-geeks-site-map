@@ -249,9 +249,8 @@ export default function MapBox() {
   // parses, check the time slot, and returns a properly formatted time slot of boxes
   function returnTimeSlots(properties){
      const slotArray = properties.timeSlots
-     var list = [];
     
-    const my_slots = slotArray.map( (slot) => {
+    const my_slots = slotArray.map( (slot, index) => {
         let startDayAbbr = ''
         let endDayAbbr = ''
         let resultSlot = ''
