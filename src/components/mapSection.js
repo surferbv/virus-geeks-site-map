@@ -76,7 +76,7 @@ export default function MapBox() {
           zoom: zoom
         }); 
 
-        map.current.dragPan.disable();
+        
 
         // will fire once the map has loaded
         map.current.on('load', () =>{
