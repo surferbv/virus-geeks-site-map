@@ -331,14 +331,14 @@ export default function MapBox() {
         </Typography>
         { currentFeature.properties.walkIn ? (
           <Stack direction="row" spacing={1}>
-            <DirectionsWalkRoundedIcon color="primary" /> 
-            <Typography sx={{ color: 'info.main' }}>Walk-ins welcome! </Typography>
+            <DirectionsWalkRoundedIcon /> 
+            <Typography>Walk-ins welcome! </Typography>
           </Stack>
         ) : false}
         { currentFeature.properties.driveThru ? (
           <Stack direction="row" spacing={1}>
-            <DirectionsCarRoundedIcon color="primary"/> 
-            <Typography sx={{ color: 'info.main' }}>Drive-thrus welcome!</Typography>
+            <DirectionsCarRoundedIcon/> 
+            <Typography>Drive-thrus welcome!</Typography>
           </Stack>
         ) : false}
         <Button variant="contained" size="small" href={currentFeature.properties.testRegisterationUrl}> Book at this location </Button>
