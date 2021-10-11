@@ -41,7 +41,8 @@ export default function MapBox() {
   // const vgSite = "https://my.virusgeeks.com/";
 
   // used to adjust items sizing and row scrolling
-  let isSmall = useMediaQuery(useTheme().breakpoints.down('sm'));
+  const myTheme = useTheme();
+  const isSmallScreen = useMediaQuery(myTheme.breakpoints.down('xs') );
 
 
   // operation big nose! 
@@ -189,16 +190,15 @@ export default function MapBox() {
   // build location list, create items, links, popups, and add event listeners
   function buildLocationList( {features} ){ // placeing a var in {} makes it an object
     let theme = createTheme();
-    theme = responsiveFontSizes(theme)
+    theme = responsiveFontSizes(theme);
 
-    console.log(isSmall);
     const site_cards = features.map(({properties}) => {
       return(
         <Card key={`listing-${properties.id}`} 
               id={`listing-${properties.id}`} 
               className = 'item'
               elevation={4}
-              sx={{ margin: 1, padding: 1, overflow: "auto" && isSmall, minWidth: 270 && isSmall }}
+              sx={{ margin: 1, padding: 1}}
         >
           <CardContent>
             <Grid container spacing={2} columns={{sm: 12}} >
@@ -251,8 +251,18 @@ export default function MapBox() {
       )
     });
    
-    // addes the finished site cards to the dom
-    ReactDOM.render(site_cards , document.getElementById('listings'));
+    if(isSmallScreen){
+      console.log("The screen is small")
+    }else{
+      console.log("The screen is NOT SMALL")
+
+    }
+    
+    ReactDOM.render(
+      <Stack direction="row"
+      sx={{overflow: "auto"}}
+      > {site_cards} </Stack>
+      ,document.getElementById('listings'));
   };
 
   // parses, check the time slot, and returns a properly formatted time slot of boxes
