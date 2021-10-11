@@ -328,7 +328,7 @@ export default function MapBox() {
         </ThemeProvider>
         {/* <Typography variant="body1" component='div'>
           {currentFeature.properties.phoneFormatted}
-        </Typography>
+        </Typography> */}
         { currentFeature.properties.walkIn ? (
           <Stack direction="row" spacing={1}>
             <DirectionsWalkRoundedIcon /> 
