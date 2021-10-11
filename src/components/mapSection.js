@@ -191,19 +191,27 @@ export default function MapBox() {
               elevation={4}
               sx={{ margin: 2, padding: 1}}
         >
-          <Grid container spacing={2} >
-            <Grid item>
-              <Stack spacing={2} className={'details'}>
-                <Link href="#" 
-                      color="primary"
-                      underline="hover" 
-                      className='title' 
-                      id={`link-${properties.id}`}
-                      onClick={() => {
-                        for (const feature of features) { // this might be improved by not iterating over n features
-                          if (`link-${properties.id}` === `link-${feature.properties.id}`) {
-                            flyToSite(feature);
-                            createPopUp(feature);
+          <CardContent>
+            <Grid container spacing={2} columns={{sm: 12}} >
+              <Grid item>
+                <Stack spacing={2} className={'details'}>
+                  <Link href="#" 
+                        color="primary"
+                        underline="hover" 
+                        className='title'
+                        variant='h6'
+                        id={`link-${properties.id}`}
+                        onClick={() => {
+                          for (const feature of features) { // this might be improved by not iterating over n features
+                            if (`link-${properties.id}` === `link-${feature.properties.id}`) {
+                              flyToSite(feature);
+                              createPopUp(feature);
+                            }
+                          }
+                          
+                          const activeItem = document.getElementsByClassName('active'); 
+                          if(activeItem[0]){
+                            activeItem[0].classList.remove('active');
                           }
                         }
                         
