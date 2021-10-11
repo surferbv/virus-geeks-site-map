@@ -19,7 +19,9 @@ import DirectionsWalkRoundedIcon from '@mui/icons-material/DirectionsWalkRounded
 import DirectionsCarRoundedIcon from '@mui/icons-material/DirectionsCarRounded';
 import Container from "@mui/material/Container";
 
-
+import { createTheme, ThemeProvider, responsiveFontSizes, useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import CardContent from '@mui/material/CardContent';
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYnZhcmdhcyIsImEiOiJja3RuajM5YXYwM2EyMzBwOXg1eWhyZHN6In0.rxrzHoPOPsxAbmBd1qsDgg";
@@ -31,6 +33,10 @@ export default function MapBox() {
   const [lng, setLng] = useState(-122.3);
   const [lat, setLat] = useState(37.6);
   const [zoom, setZoom] = useState(9);
+  
+  const theme = useTheme();
+  const match = useMediaQuery(theme.breakpoints.down('sm'))
+
   
   // used by fetch
   const [error, setError] = useState(null);
