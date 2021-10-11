@@ -107,6 +107,10 @@ code {
     height: 300px;
     /* background-color: blue; */
   }
+  .item{
+    overflow: "auto"; 
+    min-width: 260px;
+  }
 }
 /* sm */
 @media only screen and (min-width: 600px) and (max-width: 900px) {
