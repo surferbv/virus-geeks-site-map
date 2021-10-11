@@ -213,32 +213,29 @@ export default function MapBox() {
                           if(activeItem[0]){
                             activeItem[0].classList.remove('active');
                           }
-                        }
-                        
-                        const activeItem = document.getElementsByClassName('active'); 
-                        if(activeItem[0]){
-                          activeItem[0].classList.remove('active');
-                        }
-                        // this.Link.parentNode.classList.add('active'); 
-                      }}
-                >
-                  <strong>
-                    {properties.name}
-                  </strong>
-                </Link>
-                <Typography component="div" >
-                  <Box> 
-                    {properties.address}
-                  </Box>
-                  <Box>
-                  {properties.city}, {properties.state} {properties.postalCode} 
-                  </Box>
-                  <Box>Hours:</Box>
-                  {returnTimeSlots(properties)}
-                  <Box> {roundDistance(properties.distance)}</Box>
-                </Typography>
-                <Button variant="contained" size="small" href={properties.testRegisterationUrl}> Book at this location </Button>
-              </Stack>
+                          // this.Link.parentNode.classList.add('active'); 
+                        }}
+                  >
+                    <strong>
+                      {properties.name}
+                    </strong>
+                  </Link>
+                  <ThemeProvider theme={theme}>
+                    <Typography component="div" >
+                      <Box> 
+                        {properties.address}
+                      </Box>
+                      <Box>
+                      {properties.city}, {properties.state} {properties.postalCode} 
+                      </Box>
+                      <Box> Hours:</Box>
+                      {returnTimeSlots(properties)}
+                      <Box> {roundDistance(properties.distance)}</Box>
+                    </Typography>
+                  </ThemeProvider>
+                  <Button variant="contained" size="small" href={properties.testRegisterationUrl}> Book at this location </Button>
+                </Stack>
+              </Grid>
             </Grid>
           </Grid>
         </Card>
