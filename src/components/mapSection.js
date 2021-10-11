@@ -342,7 +342,7 @@ export default function MapBox() {
           </Stack>
         ) : false}
         <Button variant="contained" size="small" href={currentFeature.properties.testRegisterationUrl}> Book at this location </Button>
-        <Button variant="contained" size="large" href={googleLink} target="_blank" rel="noopener"> Directions </Button>
+        <Button variant="contained" size="small" href={googleLink} target="_blank" rel="noopener"> Directions </Button>
       </Stack>;
 
     createPopUpComp(myJsxObj, currentFeature); //TODO: Could remove this and add all it's functionality here
