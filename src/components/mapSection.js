@@ -309,6 +309,9 @@ export default function MapBox() {
   // adds a popup given a current feature
   function createPopUp(currentFeature){
 
+    let theme = createTheme();
+    theme = responsiveFontSizes(theme)
+
     // google link directions
     const lng = currentFeature.geometry.coordinates[0];
     const lat = currentFeature.geometry.coordinates[1];
