@@ -14,9 +14,9 @@ code {
 }
 
 /* Added for mapbox */
-.map-container {
-  /* height: 800px; */
-}
+/* .map-container {
+  height: 800px;
+} */
 
 .locsidebar {
   background-color: rgba(35, 55, 75, 0.9);
@@ -30,11 +30,11 @@ code {
 }
 
 /* side bar styles */
-.sidebar {
-  /* background-color: rgba(12, 130, 114, .9); */
-  /* overflow: hidden; */
+/* .sidebar {
+  background-color: rgba(12, 130, 114, .9);
+  overflow: hidden auto;
   border-right: 0px solid rgba(0, 0, 0, 0.25);
-}
+} */
 
 /* listing styles on side bar of map */
 /* .listings {
