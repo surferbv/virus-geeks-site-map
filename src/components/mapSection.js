@@ -211,11 +211,11 @@ export default function MapBox() {
           key={`listing-${properties.id}`}
           id={`listing-${properties.id}`}
           className="item"
-          elevation={4}
-          sx={{ margin: 1, padding: 1 }}
+          elevation={8}
+          sx={{m: 1}}
         >
           <CardContent>
-            <Grid container spacing={2} columns={{ sm: 12 }}>
+            <Grid container columns={{ sm: 12 }}>
               <Grid item>
                 <Link
                   href="#"
@@ -368,8 +368,7 @@ export default function MapBox() {
           </Typography>
           <Typography variant="body1" component="div">
             {currentFeature.properties.address}
-          </Typography>
-          <Typography variant="body1" component="div">
+            <br/>
             {currentFeature.properties.city}, {currentFeature.properties.state}{" "}
             {currentFeature.properties.postalCode}
           </Typography>
@@ -496,9 +495,9 @@ export default function MapBox() {
     return (
       <div>
         <Container>
-          <Grid container spacing={0} sx={{ mb: 5 }}>
+          <Grid container spacing={2} sx={{ mb: 5 }}>
             {/* geocoder */}
-            <Grid item xs={12} sx={{ p: 1, pt: 3, pb: 3 }} align="center">
+            <Grid item xs={12} align="center">
               <div id="geocoder-container" />
             </Grid>
 
