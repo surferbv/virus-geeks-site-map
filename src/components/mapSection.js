@@ -101,6 +101,12 @@ export default function MapBox() {
               placeholder: "Enter your location here",
             });
 
+            // create new control
+            const nav = new mapboxgl.NavigationControl({
+              showCompass: false,
+              showZoom: true
+            });
+
             // save results of geocoder
             geocoder.on("result", ({ result }) => {
               const searchResult = result.geometry;
@@ -156,7 +162,12 @@ export default function MapBox() {
 
             // add geocoder i.e. search bar
             geocoder.addTo("#geocoder-container");
+          
+            // for debut TODO: not being used might delete
             // map.current.addControl(geocoder, 'top-left');
+
+            // add zoom control
+            map.current.addControl(nav, "top-right");
 
             // build the location list
             buildLocationList(sites);
