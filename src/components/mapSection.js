@@ -158,6 +158,7 @@ export default function MapBox() {
               const activeListing = document.getElementById(
                 `listing-${sites.features[0].properties.id}`
               );
+
               activeListing.classList.add("active");
 
               // sets a bouding box with the search result and the nearest site in it
@@ -218,7 +219,7 @@ export default function MapBox() {
           id={`listing-${properties.id}`}
           className="item"
           elevation={8}
-          sx={{m: 1}}
+          sx={{ m: 1 }}
         >
           <CardContent>
             <Grid container columns={{ sm: 12 }}>
@@ -317,7 +318,7 @@ export default function MapBox() {
           key={`slot-${index}${slot.length}`}
         >
           {startDayAbbr}
-          {endDayAbbr}:{slot.startTime} - {slot.endTime}
+          {endDayAbbr}: {slot.startTime} - {slot.endTime}
         </Box>
       );
     });
@@ -374,7 +375,7 @@ export default function MapBox() {
           </Typography>
           <Typography variant="body1" component="div">
             {currentFeature.properties.address}
-            <br/>
+            <br />
             {currentFeature.properties.city}, {currentFeature.properties.state}{" "}
             {currentFeature.properties.postalCode}
           </Typography>
