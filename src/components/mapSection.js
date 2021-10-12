@@ -104,7 +104,7 @@ export default function MapBox() {
             // create new control
             const nav = new mapboxgl.NavigationControl({
               showCompass: false,
-              showZoom: true
+              showZoom: true,
             });
 
             // save results of geocoder
@@ -162,7 +162,7 @@ export default function MapBox() {
 
             // add geocoder i.e. search bar
             geocoder.addTo("#geocoder-container");
-          
+
             // for debut TODO: not being used might delete
             // map.current.addControl(geocoder, 'top-left');
 
