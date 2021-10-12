@@ -363,8 +363,8 @@ export default function MapBox() {
     const myJsxObj = (
       <Stack spacing={1}>
         <ThemeProvider theme={theme}>
-          <Typography variant="h6" component="div">
-            {currentFeature.properties.name}{" "}
+          <Typography variant="subtitle1" component="div">
+            <strong>{currentFeature.properties.name}</strong>
           </Typography>
           <Typography variant="body1" component="div">
             {currentFeature.properties.address}
