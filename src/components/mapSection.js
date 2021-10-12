@@ -224,8 +224,9 @@ export default function MapBox() {
           sx={{ m: 1 }}
         >
           <CardContent>
-            <Grid container columns={{ sm: 12 }}>
-              <Grid item>
+            {/* <BusinessRoundedIcon /> */}
+            <ThemeProvider theme={theme}>
+              <Typography>
                 <Link
                   href="#"
                   color="primary"
@@ -255,26 +256,36 @@ export default function MapBox() {
                 >
                   <strong>{properties.name}</strong>
                 </Link>
-                <ThemeProvider theme={theme}>
-                  <Typography component="div">
-                    <BusinessRoundedIcon />
-                    <Typography variant="body2">
-                      {properties.address} <br />
-                      {properties.city}, {properties.state}
-                      {properties.postalCode}
-                    </Typography>
-                    <AccessTimeRoundedIcon />
-                    <Typography color="text.secondary">
-                      {returnTimeSlots(properties)}
-                    </Typography>
+              </Typography>
 
-                    <Box> {roundDistance(properties.distance)}</Box>
-                  </Typography>
-                </ThemeProvider>
-              </Grid>
-            </Grid>
+              <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
+                <LocationOnRoundedIcon />
+                <Typography variant="body1">
+                  {properties.address} <br />
+                  {properties.city}, {properties.state}
+                  {properties.postalCode}
+                </Typography>
+              </Stack>
+
+              <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
+                <AccessTimeRoundedIcon color="action" />
+                <Typography
+                  color="text.secondary"
+                  variant="body1"
+                  sx={{ fontSize: 14 }}
+                >
+                  {returnTimeSlots(properties)}
+                </Typography>
+              </Stack>
+
+              <Stack direction="row" spacing={1}>
+                {roundDistance(properties.distance) ? <CardTravelIcon /> : ""}
+                <Typography variant="body2">
+                  {roundDistance(properties.distance)}
+                </Typography>
+              </Stack>
+            </ThemeProvider>
           </CardContent>
-
           <CardActions>
             <Button
               variant="contained"
@@ -379,12 +390,16 @@ export default function MapBox() {
           <Typography variant="subtitle1" component="div">
             <strong>{currentFeature.properties.name}</strong>
           </Typography>
-          <Typography variant="body1" component="div">
-            {currentFeature.properties.address}
-            <br />
-            {currentFeature.properties.city}, {currentFeature.properties.state}{" "}
-            {currentFeature.properties.postalCode}
-          </Typography>
+          <Stack direction="row" spacing={1}>
+            <LocationOnRoundedIcon />
+            <Typography variant="body1" component="div">
+              {currentFeature.properties.address}
+              <br />
+              {currentFeature.properties.city},{" "}
+              {currentFeature.properties.state}{" "}
+              {currentFeature.properties.postalCode}
+            </Typography>
+          </Stack>
         </ThemeProvider>
         {/* <Typography variant="body1" component='div'>
           {currentFeature.properties.phoneFormatted}
