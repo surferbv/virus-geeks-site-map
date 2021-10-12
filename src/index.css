@@ -95,6 +95,19 @@ code {
   padding-bottom: 40px;
 }
 
+/* Card */
+/* sticking the buttons to the bottom of the card */
+.MuiCard-root{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* align the buttons with rest of the content aove */
+.MuiCardActions-root{
+  margin: 8px;
+}
+
 /* geocoder styling i.e. search bar*/
 /* .mapboxgl-ctrl-geocoder--input{
   background-color: #ffffff;
