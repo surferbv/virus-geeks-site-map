@@ -184,6 +184,7 @@ export default function MapBox() {
             // add map markers
             addMarkers(sites);
           });
+
         },
         (error) => {
           setIsLoaded(true);
@@ -352,7 +353,7 @@ export default function MapBox() {
   function flyToSite(currentFeature) {
     map.current.flyTo({
       center: currentFeature.geometry.coordinates,
-      zoom: 15,
+      zoom: 12,
     });
   }
 
@@ -360,6 +361,7 @@ export default function MapBox() {
   function createPopUpComp(jsxElement, currentFeature) {
     // if a popup exists already
     const popUps = document.getElementsByClassName("mapboxgl-popup");
+
     // then remove it
     if (popUps[0]) popUps[0].remove();
 
