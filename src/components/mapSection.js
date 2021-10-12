@@ -255,13 +255,17 @@ export default function MapBox() {
                 </Link>
                 <ThemeProvider theme={theme}>
                   <Typography component="div">
-                    <Box>{properties.address}</Box>
-                    <Box>
-                      {properties.city}, {properties.state}{" "}
+                    <BusinessRoundedIcon />
+                    <Typography variant="body2">
+                      {properties.address} <br />
+                      {properties.city}, {properties.state}
                       {properties.postalCode}
-                    </Box>
-                    <Box> Hours:</Box>
-                    {returnTimeSlots(properties)}
+                    </Typography>
+                    <AccessTimeRoundedIcon />
+                    <Typography color="text.secondary">
+                      {returnTimeSlots(properties)}
+                    </Typography>
+
                     <Box> {roundDistance(properties.distance)}</Box>
                   </Typography>
                 </ThemeProvider>
