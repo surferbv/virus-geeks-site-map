@@ -1,23 +1,29 @@
 import React, { useRef, useEffect, useState } from "react";
+import ReactDOM from "react-dom";
+
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
-import Alert from "@mui/material/Alert";
 import * as turf from "@turf/turf";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
 import SideBar from "./sidebar";
+
 import Grid from "@mui/material/Grid";
-import ReactDOM from "react-dom";
 import Card from "@mui/material/Card";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
+import Container from "@mui/material/Container";
+
+import Alert from "@mui/material/Alert";
 import logo from "../../src/assets/vg_marker.png";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
-import Box from "@mui/material/Box";
+
 import DirectionsWalkRoundedIcon from "@mui/icons-material/DirectionsWalkRounded";
 import DirectionsCarRoundedIcon from "@mui/icons-material/DirectionsCarRounded";
-import Container from "@mui/material/Container";
+import AccessTimeRoundedIcon from "@mui/icons-material/AccessTimeRounded";
+import BusinessRoundedIcon from "@mui/icons-material/BusinessRounded";
 
 import {
   createTheme,
