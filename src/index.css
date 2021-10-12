@@ -101,23 +101,42 @@ code {
   padding: 20px;
 } */
 
+
 /* xs */
 @media only screen and (min-width: 0px) and (max-width: 600px) {
-  .map-container, .sidebar {
+  .map-container {
     height: 300px;
     /* background-color: blue; */
   }
+
+  /* sets card in row form scroll mode */
   .item{
-    overflow: "auto"; 
+    overflow: auto; 
     min-width: 260px;
   }
+  
+  /* sets the list of cards row form with scroll */
+  #location-list-stack{
+    flex-direction: row;
+    overflow: auto; 
+  }
 }
+
 /* sm */
 @media only screen and (min-width: 600px) and (max-width: 900px) {
   .map-container, .sidebar {
     height: 700px;
-    /* background-color: orange; */
+    /* background-color: orange;   */
   }
+}
+
+/* sm and up */
+@media only screen and (min-width: 600px){
+  /* bar now goes column mode */
+  .sidebar{
+    overflow: hidden auto;
+  }
+
 }
 
 /* md */
