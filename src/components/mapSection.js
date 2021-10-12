@@ -24,6 +24,8 @@ import DirectionsWalkRoundedIcon from "@mui/icons-material/DirectionsWalkRounded
 import DirectionsCarRoundedIcon from "@mui/icons-material/DirectionsCarRounded";
 import AccessTimeRoundedIcon from "@mui/icons-material/AccessTimeRounded";
 import BusinessRoundedIcon from "@mui/icons-material/BusinessRounded";
+import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
+import CardTravelIcon from "@mui/icons-material/CardTravel";
 
 import {
   createTheme,
