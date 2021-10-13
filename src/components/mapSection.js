@@ -525,28 +525,26 @@ export default function MapBox() {
     );
   } else {
     return (
-      <div>
-        <Container>
-          <Grid container spacing={2} sx={{ mb: 5 }}>
-            {/* geocoder */}
-            <Grid item xs={12} align="center">
-              <div id="geocoder-container" />
-            </Grid>
-
-            {/* sidebar for locations */}
-            <Grid item xs order={{ xs: 3, sm: 2 }}>
-              <SideBar />
-            </Grid>
-
-            {/* map  */}
-            <Grid item xs={12} sm={7} md={8} lg={9} order={{ xs: 2, sm: 3 }}>
-              <Card elevation={8}>
-                <div ref={mapContainer} className="map-container" />
-              </Card>
-            </Grid>
+      <Container>
+        <Grid container spacing={2} sx={{ mb: 5 }}>
+          {/* geocoder */}
+          <Grid item xs={12} align="center">
+            <div id="geocoder-container" />
           </Grid>
-        </Container>
-      </div>
+
+          {/* sidebar for locations */}
+          <Grid item xs order={{ xs: 3, sm: 2 }}>
+            <SideBar />
+          </Grid>
+
+          {/* map  */}
+          <Grid item xs={12} sm={7} md={8} lg={9} order={{ xs: 2, sm: 3 }}>
+            <Card elevation={8}>
+              <div ref={mapContainer} className="map-container" />
+            </Card>
+          </Grid>
+        </Grid>
+      </Container>
     );
   }
 }
