@@ -19,7 +19,7 @@ export default function AppBarSection() {
   theme = responsiveFontSizes(theme);
 
   return (
-    <Box sx={{ flexGrow: 1, pb: 8 }}>
+    <Box sx={{ flexGrow: 1, mb: 10 }}>
       <Slide in={!trigger}>
         <AppBar position="fixed" sx={{ background: "white" }}>
           <Container>

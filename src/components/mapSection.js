@@ -513,20 +513,20 @@ export default function MapBox() {
   // displaying fetch error to the ui
   if (error) {
     return (
-      <Container>
+      <Container spacing={2} sx={{ mb: 4 }}>
         <Alert severity="error">Error: {error.message}</Alert>
       </Container>
     );
   } else if (!isLoaded) {
     return (
-      <Container>
+      <Container spacing={2} sx={{ mb: 4 }}>
         <Alert severity="info">Loading...</Alert>
       </Container>
     );
   } else {
     return (
       <Container>
-        <Grid container spacing={2} sx={{ mb: 5 }}>
+        <Grid container spacing={2} sx={{ mb: 4 }}>
           {/* geocoder */}
           <Grid item xs={12} align="center">
             <div id="geocoder-container" />
