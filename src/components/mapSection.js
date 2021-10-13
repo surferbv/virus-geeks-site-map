@@ -21,7 +21,6 @@ import { Typography } from "@mui/material";
 import DirectionsWalkRoundedIcon from "@mui/icons-material/DirectionsWalkRounded";
 import DirectionsCarRoundedIcon from "@mui/icons-material/DirectionsCarRounded";
 import AccessTimeRoundedIcon from "@mui/icons-material/AccessTimeRounded";
-import BusinessRoundedIcon from "@mui/icons-material/BusinessRounded";
 import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 import CardTravelIcon from "@mui/icons-material/CardTravel";
 
@@ -181,7 +180,6 @@ export default function MapBox() {
             // add map markers
             addMarkers(sites);
           });
-
         },
         (error) => {
           setIsLoaded(true);
@@ -254,18 +252,22 @@ export default function MapBox() {
                   <strong>{properties.name}</strong>
                 </Link>
               </Typography>
+            </ThemeProvider>
 
-              <Stack direction="row" spacing={1} sx={{ mb: 1, mt: 1 }}>
-                <LocationOnRoundedIcon />
+            <Stack direction="row" spacing={1} sx={{ mb: 1, mt: 1 }}>
+              <LocationOnRoundedIcon />
+              <ThemeProvider theme={theme}>
                 <Typography variant="body1">
                   {properties.address} <br />
                   {properties.city}, {properties.state}
                   {properties.postalCode}
                 </Typography>
-              </Stack>
+              </ThemeProvider>
+            </Stack>
 
-              <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
-                <AccessTimeRoundedIcon color="action" />
+            <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
+              <AccessTimeRoundedIcon color="action" />
+              <ThemeProvider theme={theme}>
                 <Typography
                   color="text.secondary"
                   variant="body1"
@@ -273,15 +275,17 @@ export default function MapBox() {
                 >
                   {returnTimeSlots(properties)}
                 </Typography>
-              </Stack>
+              </ThemeProvider>
+            </Stack>
 
-              <Stack direction="row" spacing={1}>
-                {roundDistance(properties.distance) ? <CardTravelIcon /> : ""}
+            <Stack direction="row" spacing={1}>
+              {roundDistance(properties.distance) ? <CardTravelIcon /> : ""}
+              <ThemeProvider theme={theme}>
                 <Typography variant="body2">
                   {roundDistance(properties.distance)}
                 </Typography>
-              </Stack>
-            </ThemeProvider>
+              </ThemeProvider>
+            </Stack>
           </CardContent>
           <CardActions>
             <Button
@@ -310,7 +314,6 @@ export default function MapBox() {
     const my_slots = slotArray.map((slot, index) => {
       let startDayAbbr = "";
       let endDayAbbr = "";
-      let resultSlot = "";
 
       // abbrivate the days and check if they exist
       if (slot.startDay) {
@@ -325,20 +328,21 @@ export default function MapBox() {
         endDayAbbr = "-" + endDayAbbr;
       }
 
-      resultSlot = `${startDayAbbr}${endDayAbbr}: ${slot.startTime} - ${slot.endTime}`;
       return (
-        <Box
-          id={`slot-${index}${slot.timeSlotName}`}
+        <div
           key={`slot-${index}${slot.length}`}
         >
           {startDayAbbr}
           {endDayAbbr}: {slot.startTime} - {slot.endTime}
-        </Box>
+        </div>
       );
     });
-    return my_slots;
+    
+    // Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
+    return my_slots
   }
 
+  // rounds the distnace calcualted from search to nearest site
   function roundDistance(distance) {
     const roundedDistance = Math.round(distance * 100) / 100;
     if (!roundedDistance) return;
@@ -363,6 +367,8 @@ export default function MapBox() {
 
     // create a placeholder to add the component and renders it to the dom
     const placeholder = document.createElement("div");
+    
+    // render to dom
     ReactDOM.render(jsxElement, placeholder);
 
     const popup = new mapboxgl.Popup({ closeOnClick: false })
