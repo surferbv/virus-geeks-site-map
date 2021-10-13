@@ -7,7 +7,7 @@ import {
   responsiveFontSizes,
 } from "@mui/material/styles";
 
-export default function titleSection() {
+export default function MapTitleSection() {
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
 
