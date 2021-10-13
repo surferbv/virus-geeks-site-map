@@ -1,6 +1,6 @@
 import MapSection from './components/mapSection';
 import AppBarSection from './components/appBarSection';
-import TitleSection from './components/titleSection';
+import TitleSection from './components/mapTitleSection';
 
 
 function App() {
