@@ -24,7 +24,7 @@ export default function GetTestedSection() {
       >
         {/* main section */}
         <Grid item xs={12} md={6} >
-          <InnerItem>Title Text</InnerItem>
+          <InnerItem>Title Get Tested Section</InnerItem>
         </Grid>
         <Grid item xs={12} md={6} >
           <InnerItem>Img</InnerItem>
