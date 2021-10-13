@@ -513,15 +513,15 @@ export default function MapBox() {
   // displaying fetch error to the ui
   if (error) {
     return (
-      <div>
+      <Container>
         <Alert severity="error">Error: {error.message}</Alert>
-      </div>
+      </Container>
     );
   } else if (!isLoaded) {
     return (
-      <div>
+      <Container>
         <Alert severity="info">Loading...</Alert>
-      </div>
+      </Container>
     );
   } else {
     return (
