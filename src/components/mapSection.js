@@ -329,12 +329,12 @@ export default function MapBox() {
       }
 
       return (
-        <div
+        <Box
           key={`slot-${index}${slot.length}`}
         >
           {startDayAbbr}
           {endDayAbbr}: {slot.startTime} - {slot.endTime}
-        </div>
+        </Box>
       );
     });
     
@@ -371,7 +371,7 @@ export default function MapBox() {
     // render to dom
     ReactDOM.render(jsxElement, placeholder);
 
-    const popup = new mapboxgl.Popup({ closeOnClick: false })
+    new mapboxgl.Popup({ closeOnClick: false })
       .setDOMContent(placeholder) // this sets the control on the jsx component
       .setLngLat(currentFeature.geometry.coordinates)
       .addTo(map.current);
