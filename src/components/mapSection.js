@@ -29,7 +29,6 @@ import {
   createTheme,
   ThemeProvider,
   responsiveFontSizes,
-  useTheme,
 } from "@mui/material/styles";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
@@ -223,7 +222,6 @@ export default function MapBox() {
           sx={{ m: 1 }}
         >
           <CardContent>
-            {/* <BusinessRoundedIcon /> */}
             <ThemeProvider theme={theme}>
               <Typography>
                 <Link
