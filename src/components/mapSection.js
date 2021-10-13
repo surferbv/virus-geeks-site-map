@@ -12,11 +12,9 @@ import Card from "@mui/material/Card";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
-import Avatar from "@mui/material/Avatar";
 import Container from "@mui/material/Container";
 
 import Alert from "@mui/material/Alert";
-import logo from "../../src/assets/vg_marker.png";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 
