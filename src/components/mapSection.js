@@ -255,7 +255,7 @@ export default function MapBox() {
                 </Link>
               </Typography>
 
-              <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
+              <Stack direction="row" spacing={1} sx={{ mb: 1, mt: 1 }}>
                 <LocationOnRoundedIcon />
                 <Typography variant="body1">
                   {properties.address} <br />
