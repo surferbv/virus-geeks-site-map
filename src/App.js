@@ -1,13 +1,15 @@
 import MapSection from './components/mapSection';
+import MapTitleSection from './components/mapTitleSection';
+import GetTestedSection from './components/getTestedSection';
 import AppBarSection from './components/appBarSection';
-import TitleSection from './components/mapTitleSection';
 
 
 function App() {
   return (
     <div className="App">
       <AppBarSection/>
-      <TitleSection/>
+      <GetTestedSection/>
+      <MapTitleSection/>
       <MapSection/>
     </div>
   );
