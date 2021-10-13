@@ -10,11 +10,10 @@ import {
   ThemeProvider,
   responsiveFontSizes,
 } from "@mui/material/styles";
-import clsx from "clsx";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from '@mui/material/Slide';
 
-export default function BannerSection() {
+export default function AppBarSection() {
   const trigger = useScrollTrigger();
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
