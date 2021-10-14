@@ -16,7 +16,7 @@ import Container from "@mui/material/Container";
 
 import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
-import { Typography } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 
 import DirectionsWalkRoundedIcon from "@mui/icons-material/DirectionsWalkRounded";
 import DirectionsCarRoundedIcon from "@mui/icons-material/DirectionsCarRounded";
