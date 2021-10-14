@@ -1,9 +1,16 @@
 import React from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
-import { Paper } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
 import { Stack } from "@mui/material";
+import {
+  styled,
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from "@mui/material/styles";
+import familyMasked from "../assets/masked-mom-child-medium.jpg";
 
 const InnerItem = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
