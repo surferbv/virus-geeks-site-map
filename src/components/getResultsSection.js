@@ -81,7 +81,7 @@ export default function GetResultsSection() {
         {/* button section */}
         <Grid item xs={12}>
           <InnerItem>
-            <Button variant="contained"> Get my results </Button>
+            <Button variant="contained" href="https://my.virusgeeks.com/results" > Get my results </Button>
           </InnerItem>
         </Grid>
 
