@@ -19,6 +19,9 @@ const InnerItem = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.primary,
 }));
 
+let responsiveFontTheme = createTheme();
+responsiveFontTheme = responsiveFontSizes(responsiveFontTheme);
+
 export default function GetTestedQuestionSection() {
   return (
     <Container sx={{ mb: 4 }}>
