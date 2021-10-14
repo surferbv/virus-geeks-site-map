@@ -16,11 +16,14 @@ import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
 import AccessTimeRoundedIcon from "@mui/icons-material/AccessTimeRounded";
 
 const InnerItem = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2, 
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.primary,
-  }));
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.primary,
+}));
+
+let responsiveFontTheme = createTheme();
+responsiveFontTheme = responsiveFontSizes(responsiveFontTheme);
 
 export default function GetResultsSection() {
   return (
