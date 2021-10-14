@@ -36,6 +36,16 @@ import CardActions from "@mui/material/CardActions";
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYnZhcmdhcyIsImEiOiJja3RuajM5YXYwM2EyMzBwOXg1eWhyZHN6In0.rxrzHoPOPsxAbmBd1qsDgg";
 
+const InnerItem = styled(Box)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.primary,
+}));
+
+let responsiveFontTheme = createTheme();
+responsiveFontTheme = responsiveFontSizes(responsiveFontTheme);
+
 export default function MapBox() {
   // mapbox
   const mapContainer = useRef(null);
