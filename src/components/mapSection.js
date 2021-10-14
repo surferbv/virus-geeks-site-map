@@ -527,6 +527,12 @@ export default function MapBox() {
     return (
       <Container>
         <Grid container spacing={2} sx={{ mb: 4 }}>
+
+          {/* title */}
+          <Grid item>
+            
+          </Grid>
+          
           {/* geocoder */}
           <Grid item xs={12} align="center">
             <div id="geocoder-container" />
