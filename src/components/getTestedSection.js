@@ -14,9 +14,9 @@ import personMask2 from "../assets/masked-person1-medium.jpg";
 import maskedPeople from "../assets/masked-ppl.webp";
 import Box from "@mui/material/Box";
 
-import RoomRoundedIcon from '@mui/icons-material/RoomRounded';
-import NoteAltRoundedIcon from '@mui/icons-material/NoteAltRounded';
-import BiotechRoundedIcon from '@mui/icons-material/BiotechRounded';
+import RoomRoundedIcon from "@mui/icons-material/RoomRounded";
+import NoteAltRoundedIcon from "@mui/icons-material/NoteAltRounded";
+import BiotechRoundedIcon from "@mui/icons-material/BiotechRounded";
 
 const InnerItem = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
