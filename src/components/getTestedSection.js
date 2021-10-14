@@ -36,7 +36,7 @@ export default function GetTestedSection() {
         <Grid item xs={12} md={6}>
           <InnerItem>
             <ThemeProvider theme={responsiveFontTheme}>
-              <Typography variant="h1" gutterBottom>
+              <Typography variant="h1" color="primary" gutterBottom>
                 COVID-19 Testing
               </Typography>
 
@@ -74,7 +74,7 @@ export default function GetTestedSection() {
         <Grid item xs={12}>
           <InnerItem>
             <ThemeProvider theme={responsiveFontTheme}>
-              <Typography variant="h3" color="primary">
+              <Typography variant="h3" color="primary" gutterBottom>
                 Getting tested is as easy as 1-2-3
               </Typography>
             </ThemeProvider>
