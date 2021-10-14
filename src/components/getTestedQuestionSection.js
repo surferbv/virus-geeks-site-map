@@ -28,7 +28,13 @@ export default function GetTestedQuestionSection() {
       <Grid container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 2 }}>
         {/* main section */}
         <Grid item xs={12}>
-          <InnerItem>Title Get Test Question</InnerItem>
+          <InnerItem>
+            <ThemeProvider theme={responsiveFontTheme}>
+              <Typography variant="h3" color="primary" gutterBottom>
+                Should I Get Tested Even If I Have Been Vaccinated?
+              </Typography>
+            </ThemeProvider>
+          </InnerItem>
         </Grid>
         <Grid item xs={12}>
           <InnerItem>Paragraph Text</InnerItem>
