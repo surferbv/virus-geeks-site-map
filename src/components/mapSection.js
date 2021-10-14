@@ -376,7 +376,7 @@ export default function MapBox() {
 
     // create a placeholder to add the component and renders it to the dom
     const placeholder = document.createElement("div");
-    
+
     // render to dom
     ReactDOM.render(jsxElement, placeholder);
 
@@ -536,12 +536,17 @@ export default function MapBox() {
     return (
       <Container>
         <Grid container spacing={2} sx={{ mb: 4 }}>
-
           {/* title */}
-          <Grid item>
-            
+          <Grid item xs={12}>
+            <InnerItem>
+              <ThemeProvider theme={responsiveFontTheme}>
+                <Typography variant="h3" color="primary" gutterBottom>
+                  Find a Location Near You
+                </Typography>
+              </ThemeProvider>
+            </InnerItem>
           </Grid>
-          
+
           {/* geocoder */}
           <Grid item xs={12} align="center">
             <div id="geocoder-container" />
