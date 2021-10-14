@@ -1,11 +1,19 @@
 import React from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
-import { Paper } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 import { Stack } from "@mui/material";
 import Button from "@mui/material/Button";
+import {
+  styled,
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from "@mui/material/styles";
 
+import AssignmentRoundedIcon from "@mui/icons-material/AssignmentRounded";
+import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
+import AccessTimeRoundedIcon from "@mui/icons-material/AccessTimeRounded";
 
 const InnerItem = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2, 
