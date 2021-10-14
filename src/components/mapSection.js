@@ -25,6 +25,7 @@ import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 import CardTravelIcon from "@mui/icons-material/CardTravel";
 
 import {
+  styled,
   createTheme,
   ThemeProvider,
   responsiveFontSizes,
