@@ -60,7 +60,9 @@ export default function GetTestedQuestionSection() {
           </InnerItem>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <InnerItem>Img</InnerItem>
+          <InnerItem>
+            <Box component="img" sx={{ maxWidth: "100%" }} src={familyMasked} />
+          </InnerItem>
         </Grid>
       </Grid>
     </Container>
