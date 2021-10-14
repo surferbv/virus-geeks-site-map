@@ -14,7 +14,6 @@ function App() {
       <GetTestedSection/>
       <GetResultsSection/>
 
-      <MapTitleSection/> {/* could move this into mapsection */}
       <MapSection/>
 
 
