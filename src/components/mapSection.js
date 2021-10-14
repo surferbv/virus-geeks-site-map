@@ -541,7 +541,7 @@ export default function MapBox() {
             <InnerItem>
               <ThemeProvider theme={responsiveFontTheme}>
                 <Typography variant="h3" color="primary" gutterBottom>
-                  Find a Location Near You
+                  Find a Test Site Near You
                 </Typography>
               </ThemeProvider>
             </InnerItem>
