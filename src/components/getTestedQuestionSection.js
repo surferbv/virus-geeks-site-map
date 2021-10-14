@@ -17,7 +17,6 @@ const InnerItem = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
   color: theme.palette.text.primary,
-  background: theme.palette.primary.light,
 }));
 
 export default function GetTestedQuestionSection() {
