@@ -37,7 +37,15 @@ export default function GetTestedQuestionSection() {
           </InnerItem>
         </Grid>
         <Grid item xs={12}>
-          <InnerItem>Paragraph Text</InnerItem>
+          <InnerItem>
+            <ThemeProvider theme={responsiveFontTheme}>
+              <Typography variant="body1">
+                Did you receive a vaccination but still have concerns? If so,
+                you are like thousands of others who want to protect themselves,
+                their children, elderly parents, friends and family.
+              </Typography>
+            </ThemeProvider>
+          </InnerItem>
         </Grid>
 
         {/* secondary section */}
