@@ -85,12 +85,25 @@ export default function GetTestedSection() {
         <Grid item xs={12} sm={4}>
           <Stack direction="column" spacing={1}>
             <InnerItem>
-                <RoomRoundedIcon fontSize="large"/>
+              <RoomRoundedIcon fontSize="large" />
+            </InnerItem>
+            <InnerItem>
+              <ThemeProvider theme={responsiveFontTheme}>
+                <Typography variant="subtitle1">Find a Location</Typography>
+              </ThemeProvider>
+            </InnerItem>
+          </Stack>
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <Stack direction="column" spacing={1}>
+            <InnerItem>
+              <NoteAltRoundedIcon fontSize="large" />
             </InnerItem>
             <InnerItem>
               <ThemeProvider theme={responsiveFontTheme}>
                 <Typography variant="subtitle1">
-                    Find a Location</Typography>
+                  Register For Testing
+                </Typography>
               </ThemeProvider>
             </InnerItem>
           </Stack>
@@ -98,19 +111,7 @@ export default function GetTestedSection() {
         <Grid item xs={12} sm={4}>
           <Stack direction="column" spacing={1}>
             <InnerItem>
-            <NoteAltRoundedIcon fontSize="large"/>
-            </InnerItem>
-            <InnerItem>
-              <ThemeProvider theme={responsiveFontTheme}>
-                <Typography variant="subtitle1">Register For Testing</Typography>
-              </ThemeProvider>
-            </InnerItem>
-          </Stack>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Stack direction="column" spacing={1}>
-            <InnerItem>
-            <BiotechRoundedIcon fontSize="large"/>
+              <BiotechRoundedIcon fontSize="large" />
             </InnerItem>
             <InnerItem>
               <ThemeProvider theme={responsiveFontTheme}>
