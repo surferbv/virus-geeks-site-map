@@ -50,7 +50,14 @@ export default function GetTestedQuestionSection() {
 
         {/* secondary section */}
         <Grid item xs={12} sm={6}>
-          <InnerItem>Title</InnerItem>
+          <InnerItem>
+            <ThemeProvider theme={responsiveFontTheme}>
+              <Typography variant="h4" gutterBottom>
+                Getting tested can protect you and your family from unknowingly
+                spreading COVID-19. Visit a test site today to learn more.
+              </Typography>
+            </ThemeProvider>
+          </InnerItem>
         </Grid>
         <Grid item xs={12} sm={6}>
           <InnerItem>Img</InnerItem>
