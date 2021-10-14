@@ -340,17 +340,15 @@ export default function MapBox() {
       }
 
       return (
-        <Box
-          key={`slot-${index}${slot.length}`}
-        >
+        <Box key={`slot-${index}${slot.length}`}>
           {startDayAbbr}
           {endDayAbbr}: {slot.startTime} - {slot.endTime}
         </Box>
       );
     });
-    
+
     // Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
-    return my_slots
+    return my_slots;
   }
 
   // rounds the distnace calcualted from search to nearest site
