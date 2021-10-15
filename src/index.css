@@ -138,7 +138,7 @@ code {
 /* sm */
 @media only screen and (min-width: 600px) and (max-width: 900px) {
   .map-container, .sidebar {
-    height: 700px;
+    height: 600px;
     /* background-color: orange;   */
   }
 }
@@ -155,7 +155,7 @@ code {
 /* md */
 @media only screen and (min-width: 900px) and (max-width: 1200px) {
   .map-container, .sidebar{
-    height: 900px;  
+    height: 600px;  
     /* background-color: purple; */
   }
 }
@@ -163,7 +163,7 @@ code {
 /* lg */
 @media only screen and (min-width: 1200px) and (max-width: 1536px) {
   .map-container, .sidebar {
-    height: 1000px;
+    height: 600px;
     /* background-color: green; */
   }
 }
@@ -171,7 +171,7 @@ code {
 /* xl */
 @media only screen and (min-width: 1536px) {
   .map-container, .sidebar {
-    height: 1100px;
+    height: 700px;
     /* background-color: red; */
   }
 }
