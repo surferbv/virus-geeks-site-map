@@ -2,6 +2,7 @@ import React from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import { Paper, Typography } from "@mui/material";
+import Box from '@mui/material/Box';
 import { Stack } from "@mui/material";
 import Button from "@mui/material/Button";
 import {
@@ -15,7 +16,7 @@ import AssignmentRoundedIcon from "@mui/icons-material/AssignmentRounded";
 import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
 import AccessTimeRoundedIcon from "@mui/icons-material/AccessTimeRounded";
 
-const InnerItem = styled(Paper)(({ theme }) => ({
+const InnerItem = styled(Box)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: "center",

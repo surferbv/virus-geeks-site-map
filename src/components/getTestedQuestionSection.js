@@ -12,7 +12,7 @@ import {
 } from "@mui/material/styles";
 import familyMasked from "../assets/masked-mom-child-medium.jpg";
 
-const InnerItem = styled(Paper)(({ theme }) => ({
+const InnerItem = styled(Box)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: "center",

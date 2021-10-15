@@ -18,7 +18,7 @@ import RoomRoundedIcon from "@mui/icons-material/RoomRounded";
 import NoteAltRoundedIcon from "@mui/icons-material/NoteAltRounded";
 import BiotechRoundedIcon from "@mui/icons-material/BiotechRounded";
 
-const InnerItem = styled(Paper)(({ theme }) => ({
+const InnerItem = styled(Box)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: "center",
@@ -31,7 +31,7 @@ responsiveFontTheme = responsiveFontSizes(responsiveFontTheme);
 export default function GetTestedSection() {
   return (
     <Container sx={{ mb: 4 }}>
-      <Grid container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 2 }}>
+      <Grid container rowSpacing={2} columnSpacing={2}>
         {/* main section */}
         <Grid item xs={12} md={6}>
           <InnerItem>
