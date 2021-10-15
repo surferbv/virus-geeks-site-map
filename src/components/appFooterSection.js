@@ -26,7 +26,7 @@ responsiveFontTheme = responsiveFontSizes(responsiveFontTheme);
 
 export default function AppFooterSection() {
   return (
-    <Container maxWidth="xl" sx={{ pt:12, pb: 4, bgcolor: 'secondary.main.light' }} >
+    <Container sx={{ pt:12, pb: 4 }} >
         <Divider variant="middle"/>
       <Grid container rowSpacing={2} columnSpacing={2} direction="row" justifyContent="center" alignItems="center">
         <Grid item xs={12} sm >
