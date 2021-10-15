@@ -45,11 +45,11 @@ export default function GetResultsSection() {
         <Grid item xs={12} sm={4}>
           <Stack direction="column" spacing={1}>
             <InnerItem>
-              <AssignmentRoundedIcon fontSize="large" />
+              <AssignmentRoundedIcon style={{ fontSize: 80 }} />
             </InnerItem>
             <InnerItem>
               <ThemeProvider theme={responsiveFontTheme}>
-                <Typography variant="subtitle1">Your Results</Typography>
+                <Typography variant="h5">Your Results</Typography>
               </ThemeProvider>
             </InnerItem>
           </Stack>
@@ -57,11 +57,11 @@ export default function GetResultsSection() {
         <Grid item xs={12} sm={4}>
           <Stack direction="column" spacing={1}>
             <InnerItem>
-              <MailOutlineRoundedIcon fontSize="large" />
+              <MailOutlineRoundedIcon style={{ fontSize: 80 }} />
             </InnerItem>
             <InnerItem>
               <ThemeProvider theme={responsiveFontTheme}>
-                <Typography variant="subtitle1">Sent To You</Typography>
+                <Typography variant="h5">Sent To You</Typography>
               </ThemeProvider>
             </InnerItem>
           </Stack>
@@ -69,11 +69,11 @@ export default function GetResultsSection() {
         <Grid item xs={12} sm={4}>
           <Stack direction="column" spacing={1}>
             <InnerItem>
-              <AccessTimeRoundedIcon fontSize="large" />
+              <AccessTimeRoundedIcon style={{ fontSize: 80 }} />
             </InnerItem>
             <InnerItem>
               <ThemeProvider theme={responsiveFontTheme}>
-                <Typography variant="subtitle1">48Hrs! </Typography>
+                <Typography variant="h5">48Hrs! </Typography>
               </ThemeProvider>
             </InnerItem>
           </Stack>
@@ -82,10 +82,11 @@ export default function GetResultsSection() {
         {/* button section */}
         <Grid item xs={12}>
           <InnerItem>
-            <Button variant="contained" href="https://my.virusgeeks.com/results" > Get my results </Button>
+            <Button variant="contained" href="https://my.virusgeeks.com/results" size="large" > Get my results </Button>
           </InnerItem>
         </Grid>
 
+        {/* details section */}
         <Grid item xs={12}>
           <InnerItem>
             <ThemeProvider theme={responsiveFontTheme}>
