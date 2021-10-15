@@ -234,7 +234,6 @@ export default function MapBox() {
             <ThemeProvider theme={theme}>
               <Typography>
                 <Link
-                  href="#"
                   color="primary"
                   underline="hover"
                   className="title"
