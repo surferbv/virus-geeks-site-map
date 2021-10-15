@@ -62,7 +62,7 @@ export default function MapBox() {
   );
   // const vgSite = "https://my.virusgeeks.com/";
 
-  // operation big nose!
+  // operation big nose! To extract json data from external source. 
   // useEffect(() =>{
   //   fetch(vgSite).then(function (response) {
   //     // The API call was successful!
