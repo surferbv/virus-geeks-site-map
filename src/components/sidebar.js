@@ -4,7 +4,6 @@ import React from "react";
 export default function SideBar(props) {
   return (
     <div className="sidebar">
-      <div className="heading"></div>
       <div id="listings"></div>
     </div>
   );
