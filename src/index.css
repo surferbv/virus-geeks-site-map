@@ -65,7 +65,7 @@ code {
   background-color: #f8f8f8;
 } */
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 0px;
   height: 3px;
   border-left: 0;
@@ -79,7 +79,7 @@ code {
 ::-webkit-scrollbar-thumb {
   background: #5e8cbb;
   border-radius: 0;
-}
+} */
 
 /* marker */
 .marker {
