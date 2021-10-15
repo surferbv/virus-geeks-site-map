@@ -31,35 +31,35 @@ export default function AppFooterSection() {
       <Grid container rowSpacing={2} columnSpacing={2} direction="row" justifyContent="center" alignItems="center">
         <Grid item xs={12} sm >
           <InnerItem>
-            <Link href="#" underline="always" variant="button" sx={{ fontSize: {sm: 10, md: 16} }} gutterBottom>
+            <Link href="https://virusgeeks.com/" underline="always" variant="button" sx={{ fontSize: {sm: 11, md: 16} }} target="_blank" rel="noopener" gutterBottom>
               Virus Geeks
             </Link>
           </InnerItem>
         </Grid>
         <Grid item xs={12} sm >
           <InnerItem>
-            <Link href="#" underline="always" variant="button" sx={{ fontSize: {sm: 10, md: 16} }} gutterBottom>
+            <Link href="https://virusgeeks.com/contact" underline="always" variant="button" sx={{ fontSize: {sm: 11, md: 16} }} target="_blank" rel="noopener" gutterBottom>
               Contact us
             </Link>
           </InnerItem>
         </Grid>
         <Grid item xs={12} sm >
           <InnerItem>
-            <Link href="#" underline="always" variant="button" sx={{ fontSize: {sm: 10, md: 16} }} gutterBottom>
+            <Link href="https://my.virusgeeks.com/footerModals/footerTos" underline="always" variant="button" sx={{ fontSize: {sm: 11, md: 16} }} target="_blank" rel="noopener" gutterBottom>
               Terms of service
             </Link>
           </InnerItem>
         </Grid>
         <Grid item xs={12} sm >
           <InnerItem>
-            <Link href="#" underline="always" variant="button" sx={{ fontSize: {sm: 10, md: 16} }} gutterBottom>
+            <Link href="https://my.virusgeeks.com/footerModals/footerNopp" underline="always" variant="button" sx={{ fontSize: {sm: 11, md: 16} }} target="_blank" rel="noopener" gutterBottom>
               Notice of privacy practices
             </Link>
           </InnerItem>
         </Grid>
         <Grid item xs={12} sm >
           <InnerItem>
-            <Link href="#" underline="always" variant="button" sx={{ fontSize: {sm: 10, md: 16} }} gutterBottom>
+            <Link href="https://my.virusgeeks.com/footerModals/footerConsent" underline="always" variant="button" sx={{ fontSize: {sm: 10, md: 16} }} target="_blank" rel="noopener" gutterBottom>
               Covide-19 informed consent
             </Link>
           </InnerItem>
