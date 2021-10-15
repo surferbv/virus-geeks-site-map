@@ -1,31 +1,31 @@
 import React from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
-import { Paper } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 import { Stack } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
+import Link from "@mui/material/Link";
+import {
+  styled,
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from "@mui/material/styles";
 
-const InnerItem = styled(Paper)(({ theme }) => ({
+import Divider from '@mui/material/Divider';
+
+const InnerItem = styled(Box)(({ theme }) => ({
   ...theme.typography.body2,
-  height: 300,
   padding: theme.spacing(1),
   textAlign: "center",
-  color: theme.palette.text.primary,
-  background: theme.palette.primary.light,
 }));
+
+let responsiveFontTheme = createTheme();
+responsiveFontTheme = responsiveFontSizes(responsiveFontTheme);
 
 export default function AppFooterSection() {
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <Container sx={{p: 0}}>
-        <Box sx={{ bgcolor: "#cfe8fc", height: "20vh", pl: "24px", pr: "24px" }}>
-            Stuff
-        </Box>
-      </Container>
-    </React.Fragment>
     <Container maxWidth="xl" sx={{ pt:12, pb: 4, bgcolor: 'secondary.main.light' }} >
         <Divider variant="middle"/>
       <Grid container rowSpacing={2} columnSpacing={2} direction="row" justifyContent="center" alignItems="center">
