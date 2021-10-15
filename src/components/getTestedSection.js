@@ -70,7 +70,7 @@ export default function GetTestedSection() {
             </ThemeProvider>
           </InnerItem>
         </Grid>
-
+        {/* button section */}
         <Grid item xs={12}>
           <InnerItem>
             <ThemeProvider theme={responsiveFontTheme}>
@@ -80,16 +80,15 @@ export default function GetTestedSection() {
             </ThemeProvider>
           </InnerItem>
         </Grid>
-
         {/* icon section */}
         <Grid item xs={12} sm={4}>
           <Stack direction="column" spacing={1}>
             <InnerItem>
-              <RoomRoundedIcon fontSize="large" />
+              <RoomRoundedIcon style={{ fontSize: 80 }} />
             </InnerItem>
             <InnerItem>
               <ThemeProvider theme={responsiveFontTheme}>
-                <Typography variant="subtitle1">Find a Location</Typography>
+                <Typography variant="h5">Find a Location</Typography>
               </ThemeProvider>
             </InnerItem>
           </Stack>
@@ -97,11 +96,11 @@ export default function GetTestedSection() {
         <Grid item xs={12} sm={4}>
           <Stack direction="column" spacing={1}>
             <InnerItem>
-              <NoteAltRoundedIcon fontSize="large" />
+              <NoteAltRoundedIcon style={{ fontSize: 80 }} />
             </InnerItem>
             <InnerItem>
               <ThemeProvider theme={responsiveFontTheme}>
-                <Typography variant="subtitle1">
+                <Typography variant="h5">
                   Register For Testing
                 </Typography>
               </ThemeProvider>
@@ -111,11 +110,11 @@ export default function GetTestedSection() {
         <Grid item xs={12} sm={4}>
           <Stack direction="column" spacing={1}>
             <InnerItem>
-              <BiotechRoundedIcon fontSize="large" />
+              <BiotechRoundedIcon style={{ fontSize: 80 }} />
             </InnerItem>
             <InnerItem>
               <ThemeProvider theme={responsiveFontTheme}>
-                <Typography variant="subtitle1">Get Tested </Typography>
+                <Typography variant="h5">Get Tested </Typography>
               </ThemeProvider>
             </InnerItem>
           </Stack>
