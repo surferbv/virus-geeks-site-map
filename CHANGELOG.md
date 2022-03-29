@@ -1,5 +1,13 @@
+* 2021.09.24 fine-tune-view-and-data
+  - Add material ui to sidebar list and map area.
+  - Change the data format to match the specs.
+  - Change the data to match site locations.
+  - Add forwad geocoder for sites with no lat and lon.
+
 * 2021.09.23 sort-search-sites-by-distance
-  - Search and sorts the sites by distance
+  - Search and sorts the sites by distance.
+  - And other event such as sorting, bound boxing, highlighting mapbox markers and list items. 
+  - Most functionality has been completed at this point, the rest is refinment. 
 
 * 2021.09.22 mapbox-markers
   - Add markers to mapbox map.

@@ -14,9 +14,9 @@ code {
 }
 
 /* Added for mapbox */
-.map-container {
+/* .map-container {
   height: 800px;
-}
+} */
 
 .locsidebar {
   background-color: rgba(35, 55, 75, 0.9);
@@ -28,22 +28,17 @@ code {
   margin: 12px;
   border-radius: 4px;
 }
-.sidebar {
+
+/* side bar styles */
+/* .sidebar {
   background-color: rgba(12, 130, 114, .9);
-  position: absolute;
-  width: 250px;
-  height: 800px;
-  z-index: 1;
-  overflow: hidden;
-  border-right: 8px solid rgba(0, 0, 0, 0.25);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
+  overflow: hidden auto;
+  border-right: 0px solid rgba(0, 0, 0, 0.25);
+} */
 
 /* listing styles on side bar of map */
-.listings {
+/* .listings {
   height: 100%;
-  overflow: auto;
   padding-bottom: 60px;
 }
 
@@ -68,10 +63,10 @@ code {
 
 .listings .item.active {
   background-color: #f8f8f8;
-}
+} */
 
-::-webkit-scrollbar {
-  width: 3px;
+/* ::-webkit-scrollbar {
+  width: 0px;
   height: 3px;
   border-left: 0;
   background: rgba(0, 0, 0, 0.1);
@@ -84,7 +79,7 @@ code {
 ::-webkit-scrollbar-thumb {
   background: #5e8cbb;
   border-radius: 0;
-}
+} */
 
 /* marker */
 .marker {
@@ -100,21 +95,83 @@ code {
   padding-bottom: 40px;
 }
 
+/* Card */
+/* sticking the buttons to the bottom of the card */
+.MuiCard-root{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* align the buttons with rest of the content aove */
+.MuiCardActions-root{
+  margin: 8px;
+}
+
 /* geocoder styling i.e. search bar*/
-.mapboxgl-ctrl-geocoder {
-  border: 0;
-  border-radius: 0;
-  position: relative;
-  top: 0;
-  width: 800px;
-  margin-top: 0;
+/* .mapboxgl-ctrl-geocoder--input{
+  background-color: #ffffff;
+  padding: 20px;
+} */
+
+
+/* xs */
+@media only screen and (min-width: 0px) and (max-width: 600px) {
+  .map-container {
+    height: 300px;
+    /* background-color: blue; */
+  }
+
+  /* sets card in row form scroll mode */
+  .item{
+    overflow: auto; 
+    min-width: 260px;
+  }
+  
+  /* sets the list of cards row form with scroll */
+  #location-list-stack{
+    flex-direction: row;
+    overflow: auto; 
+  }
 }
 
-.mapboxgl-ctrl-geocoder > div {
-  min-width: 100%;
-  margin-left: 0;
+/* sm */
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  .map-container, .sidebar {
+    height: 600px;
+    /* background-color: orange;   */
+  }
 }
 
-.mapboxgl-ctrl{
-  right: -280px;
+/* sm and up */
+@media only screen and (min-width: 600px){
+  /* bar now goes column mode */
+  .sidebar{
+    overflow: auto;
+  }
+
+}
+
+/* md */
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+  .map-container, .sidebar{
+    height: 600px;  
+    /* background-color: purple; */
+  }
+}
+
+/* lg */
+@media only screen and (min-width: 1200px) and (max-width: 1536px) {
+  .map-container, .sidebar {
+    height: 600px;
+    /* background-color: green; */
+  }
+}
+
+/* xl */
+@media only screen and (min-width: 1536px) {
+  .map-container, .sidebar {
+    height: 700px;
+    /* background-color: red; */
+  }
 }
